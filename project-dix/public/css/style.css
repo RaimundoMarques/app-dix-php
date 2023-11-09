@@ -1,0 +1,19 @@
+*{
+    font-family: 'Roboto';
+}
+
+
+li{
+    display: inline;
+    padding: 5px;
+    cursor: pointer;
+}
+
+li a{
+    padding: 5px;
+}
+
+h1{
+    text-align: center;
+    padding: 10px;
+}
