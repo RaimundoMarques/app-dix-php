@@ -16,7 +16,7 @@
                 <th scope="col">Telefone</th>
                 <th scope="col">Cidade</th>
                 <th scope="col">Tipo</th>
-                <th scope="col">Editar</th>
+                <th scope="col">Visualizar</th>
                 <th scope="col">Remover</th>
             </tr>
         </thead>
@@ -28,8 +28,8 @@
                 <td>{{ $telefones[$i] }}</td>
                 <td>{{ $cidades[$i] }}</td>
                 <td>{{ $tipos[$i] }}</td>
-                <td><a type="button" href="/events/{{ $ids[$i] }}" class="btn btn-secondary btn-sm">Editar</a></td>
-                <td><button class="btn btn-danger btn-sm">Remover</button></td>
+                <td><a type="button" href="/events/{{ $ids[$i] }}" class="btn btn-success max-100 btn-sm text-center d-grid gap-2">Ver</a></td>
+                <td><a type="button" href="/events/{{ $ids[$i] }}" class="btn btn-danger btn-sm">Remover</a></td>
                 @endfor
                 </tr>
         </tbody>
