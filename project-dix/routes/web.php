@@ -10,7 +10,6 @@ use App\Http\Controllers\ClinicasServicosController;
 use App\Http\Controllers\EspecialidadeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\NoticiasController;
 use App\Http\Controllers\PacientesController;
 use App\Http\Controllers\ProfissionaisController;
 use App\Http\Controllers\ServicosController;
@@ -35,7 +34,7 @@ Route::get('/especialidades', [EspecialidadeController::class, 'especialidades']
 Route::get('/profissionais', [ProfissionaisController::class, 'profissionais']);
 Route::get('/clinicas', [ClinicasController::class, 'clinicas']);
 Route::get('/clinicasServicos', [ClinicasServicosController::class, 'clinicasServicos']);
-
+Route::get('/events/create', [PacientesController::class, 'create']);
 
 // Métodos DELETE
 // Métodos UPDATE

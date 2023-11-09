@@ -17,3 +17,13 @@ h1{
     text-align: center;
     padding: 10px;
 }
+
+form{
+    width: 35em;
+    margin: auto;
+}
+
+
+#div-btn-create{
+    font-size: 18pt;
+}

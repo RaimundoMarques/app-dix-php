@@ -24,17 +24,27 @@
 
 <body class="container">
 
-<h1 class="f-1">Sistema de Agendamento DIX</h1>
+    <h1 class="f-1">Sistema de Agendamento DIX</h1>
 
     <ul class="nav nav-tabs justify-content-center p-2">
         <li class="nav-item"><a class="nav-link" href="/home">HOME</a></li>
         <li class="nav-item"><a class="nav-link" href="/servicos">SERVIÇOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="/pacientes">PACIENTES</a></li>
+        <!-- <li class="nav-item"><a class="nav-link" href="/pacientes">PACIENTES</a></li> -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">PACIENTES</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/pacientes">Consultar Pacientes</a></li>
+                <li><a class="dropdown-item" href="/events/create">Cadastrar Pacientes</a></li>
+            </ul>
+        </li>
         <li class="nav-item"><a class="nav-link" href="/especialidades">ESPECIALIDADES</a></li>
         <li class="nav-item"><a class="nav-link" href="/profissionais">PROFISSIONAIS</a></li>
         <li class="nav-item"><a class="nav-link" href="/clinicas">CLÍNICAS</a></li>
         <li class="nav-item"><a class="nav-link" href="/clinicasServicos">CLÍNICAS e SERVIÇOS</a></li>
         <li class="nav-item"><a class="nav-link" onclick="btnSair()">SAIR</a></li>
+
+
+
     </ul>
 
     @yield('content')
@@ -43,6 +53,7 @@
         <p>Footer da Página</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>

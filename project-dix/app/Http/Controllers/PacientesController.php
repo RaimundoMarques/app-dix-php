@@ -40,4 +40,13 @@ class PacientesController extends Controller
             'namePage' => $namePage
         ]);
     }
+
+    public function create()
+    {
+        $namePage = "Cadastro de Clientes";
+
+        return view('events.create', [
+            'namePage' => $namePage
+        ]);
+    }
 }
