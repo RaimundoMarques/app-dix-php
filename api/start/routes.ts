@@ -23,7 +23,7 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.group(() => {
 
   Route.get('/', async () => {
-    return { hello: 'world' }
+    return { app_dix: 'app_dix' }
   })
 
   Route.resource('/users', 'FilmesController').apiOnly();

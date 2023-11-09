@@ -22,7 +22,7 @@
     </style>
 </head>
 
-<body>
+<body class="container">
 
 <h1 class="f-1">Sistema de Agendamento DIX</h1>
 

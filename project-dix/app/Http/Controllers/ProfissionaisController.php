@@ -14,11 +14,11 @@ class ProfissionaisController extends Controller
 
         // retornando dados da api
         $return = Http::get('http://localhost:3333/api/profissionais')->json();
-        $data = $return['data'];
+        $data = array_reverse($return['data']);
 
         return view('/profissionais', [
             'data' => $data,
-            'nameApp' => $nameApp, 
+            'nameApp' => $nameApp,
             'namePage' => $namePage
         ]);
     }

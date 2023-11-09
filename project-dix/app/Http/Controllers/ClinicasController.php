@@ -15,7 +15,7 @@ class ClinicasController extends Controller
 
         // retornando dados da api
         $return = Http::get('http://localhost:3333/api/clinicas')->json();
-        $data = $return['data'];
+        $data = array_reverse($return['data']);
 
         return view('/clinicas', [
             'data' => $data,

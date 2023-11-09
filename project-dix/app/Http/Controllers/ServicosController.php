@@ -14,13 +14,9 @@ class ServicosController extends Controller
 
         // retornando dados da api
         $return = Http::get('http://localhost:3333/api/servicos')->json();
-        $data = $return['data'];
+        $data = array_reverse($return['data']);
 
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
-
-        return view('servicos', [
+        return view('/servicos', [
             'data' => $data,
             'nameApp' => $nameApp, 
             'namePage' => $namePage
