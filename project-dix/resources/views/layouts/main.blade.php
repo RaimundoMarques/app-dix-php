@@ -43,8 +43,6 @@
         <li class="nav-item"><a class="nav-link" href="/clinicasServicos">CLÍNICAS e SERVIÇOS</a></li>
         <li class="nav-item"><a class="nav-link" onclick="btnSair()">SAIR</a></li>
 
-
-
     </ul>
 
     @yield('content')

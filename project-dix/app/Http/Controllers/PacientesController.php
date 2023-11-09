@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Models\Paciente;
 
 class PacientesController extends Controller
 {
@@ -48,5 +49,23 @@ class PacientesController extends Controller
         return view('events.create', [
             'namePage' => $namePage
         ]);
+    }
+
+
+    // Gravando dados formulário
+    public function store(Request $request){
+
+        $paciente = new Paciente;
+
+        $paciente->nome     = $request->nome;
+        $paciente->cpf      = $request->cpf;
+        $paciente->telefone = $request->telefone;
+        $paciente->cidade   = $request->cidade;
+        $paciente->tipo     = $request->tipo;
+
+        $paciente->save();
+
+        return redirect('/home');
+
     }
 }

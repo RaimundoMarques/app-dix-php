@@ -34,7 +34,10 @@ Route::get('/especialidades', [EspecialidadeController::class, 'especialidades']
 Route::get('/profissionais', [ProfissionaisController::class, 'profissionais']);
 Route::get('/clinicas', [ClinicasController::class, 'clinicas']);
 Route::get('/clinicasServicos', [ClinicasServicosController::class, 'clinicasServicos']);
+
+// Rotas events
 Route::get('/events/create', [PacientesController::class, 'create']);
+Route::post('/events', [PacientesController::class, 'store']);
 
 // Métodos DELETE
 // Métodos UPDATE

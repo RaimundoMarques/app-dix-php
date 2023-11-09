@@ -26,12 +26,7 @@
 
     <h1 class="f-1">Sistema de Agendamento DIX</h1>
 
-    <h2>Cadastro de clientes</h2>
     @yield('content')
-
-    <div class="d-grid gap-2 col-6 mx-auto mt-4">
-        <button id="div-btn-create" onclick="btnPacienteVoltar()" class="btn btn-primary" type="button">Voltar</button>
-    </div>
 
     <footer>
         <p>Footer da Página</p>
