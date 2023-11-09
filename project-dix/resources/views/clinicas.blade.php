@@ -19,17 +19,14 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-            for ($i = 0; $i < count($data); $i++) {
-                extract($data[$i]);
-                echo "<tr>";
-                echo "<th scope='row'>" . $id . "</th>";
-                echo "<td>" . $nome . "</td>";
-                echo "<td>" . $cnpj . "</td>";
-                echo "<td>" . $telefone . "</td>";
-                echo "<td>" . $cidade . "</td>";
-            } ?>
-            </tr>
+            @for($i=0; $i < count($ids); $i++) <tr>
+                <th scope='row'>{{ $ids[$i] }}</th>
+                <td>{{ $nomes[$i] }}</td>
+                <td>{{ $cnpjs[$i] }}</td>
+                <td>{{ $telefones[$i] }}</td>
+                <td>{{ $cidades[$i] }}</td>
+                @endfor
+                </tr>
 
         </tbody>
     </table>

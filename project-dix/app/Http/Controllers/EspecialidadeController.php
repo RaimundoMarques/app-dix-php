@@ -16,9 +16,23 @@ class EspecialidadeController extends Controller
         $return = Http::get('http://localhost:3333/api/especialidades')->json();
         $data = array_reverse($return['data']);
 
+        //dd($data);
+
+        for ($i = 0; $i < count($data); $i++) {
+            extract($data[$i]);
+
+            $ids[] = $id;
+            $nomes[] = $nome;
+            $datacriacaos[] = $datacriacao;
+            $dataatualizacaos[] = $dataatualizacao;
+        }
+
         return view('/especialidades', [
-            'data' => $data,
-            'nameApp' => $nameApp, 
+            'ids' => $ids,
+            'nomes' => $nomes,
+            'datacriacaos' => $datacriacaos,
+            'dataatualizacaos' => $dataatualizacaos,
+            'nameApp' => $nameApp,
             'namePage' => $namePage
         ]);
     }

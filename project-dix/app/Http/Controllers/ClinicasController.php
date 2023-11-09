@@ -17,11 +17,26 @@ class ClinicasController extends Controller
         $return = Http::get('http://localhost:3333/api/clinicas')->json();
         $data = array_reverse($return['data']);
 
+        //dd($data);
+
+        for ($i = 0; $i < count($data); $i++) {
+            extract($data[$i]);
+
+            $ids[] = $id;
+            $nomes[] = $nome;
+            $cnpjs[] = $cnpj;
+            $telefones[] = $telefone;
+            $cidades[] = $cidade;
+        }
+
         return view('/clinicas', [
-            'data' => $data,
+            'ids' => $ids,
+            'nomes' => $nomes,
+            'cnpjs' => $cnpjs,
+            'telefones' => $telefones,
+            'cidades' => $cidades,
             'nameApp' => $nameApp,
             'namePage' => $namePage
         ]);
     }
-
 }

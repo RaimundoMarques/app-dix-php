@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Http;
 
 class ServicosController extends Controller
 {
-    public function servicos(){
+    public function servicos()
+    {
 
         $nameApp = "Sistema de Agendamento DIX";
         $namePage = "Serviços";
@@ -16,9 +17,23 @@ class ServicosController extends Controller
         $return = Http::get('http://localhost:3333/api/servicos')->json();
         $data = array_reverse($return['data']);
 
+        //dd($data);
+
+        for ($i = 0; $i < count($data); $i++) {
+            extract($data[$i]);
+
+            $ids[] = $id;
+            $nomes[] = $nome;
+            $tipos[] = $tipo;
+            $categorias[] = $categoria;
+        }
+
         return view('/servicos', [
-            'data' => $data,
-            'nameApp' => $nameApp, 
+            'ids' => $ids,
+            'nomes' => $nomes,
+            'tipos' => $tipos,
+            'categorias' => $categorias,
+            'nameApp' => $nameApp,
             'namePage' => $namePage
         ]);
     }

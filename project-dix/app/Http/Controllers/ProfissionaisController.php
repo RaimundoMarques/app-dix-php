@@ -16,8 +16,24 @@ class ProfissionaisController extends Controller
         $return = Http::get('http://localhost:3333/api/profissionais')->json();
         $data = array_reverse($return['data']);
 
+        //dd($data);
+
+        for ($i = 0; $i < count($data); $i++) {
+            extract($data[$i]);
+
+            $ids[] = $id;
+            $nomes[] = $nome;
+            $cpfs[] = $cpf;
+            $telefones[] = $telefone;
+            $cidades[] = $cidade;
+        }
+
         return view('/profissionais', [
-            'data' => $data,
+            'ids' => $ids,
+            'nomes' => $nomes,
+            'cpfs' => $cpfs,
+            'telefones' => $telefones,
+            'cidades' => $cidades,
             'nameApp' => $nameApp,
             'namePage' => $namePage
         ]);

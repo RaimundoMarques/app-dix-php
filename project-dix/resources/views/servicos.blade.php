@@ -17,17 +17,14 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-            for ($i = 0; $i < count($data); $i++) {
-                extract($data[$i]);
-                echo "<tr>";
-                echo "<th scope='row'>" . $id . "</th>";
-                echo "<td>" . $nome . "</td>";
-                echo "<td>" . $tipo . "</td>";
-                echo "<td>" . $categoria . "</td>";
-            } ?>
-            </tr>
+            @for($i=0; $i < count($ids); $i++) <tr>
+                <th scope='row'>{{ $ids[$i] }}</th>
+                <td>{{ $nomes[$i] }}</td>
+                <td>{{ $tipos[$i] }}</td>
+                <td>{{ $categorias[$i] }}</td>
 
+            @endfor
+            </tr>
         </tbody>
     </table>
 </div>

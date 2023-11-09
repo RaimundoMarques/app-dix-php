@@ -18,17 +18,13 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-            for ($i = 0; $i < count($data); $i++) {
-                extract($data[$i]);
-                echo "<tr>";
-                echo "<th scope='row'>" . $id . "</th>";
-                echo "<td>" . $nome . "</td>";
-                echo "<td>" . $datacriacao . "</td>";
-                echo "<td>" . $dataatualizacao . "</td>";
-            } ?>
-            </tr>
-
+            @for($i=0; $i < count($ids); $i++) <tr>
+                <th scope='row'>{{ $ids[$i] }}</th>
+                <td>{{ $nomes[$i] }}</td>
+                <td>{{ $datacriacaos[$i] }}</td>
+                <td>{{ $dataatualizacaos[$i] }}</td>
+                @endfor
+                </tr>
         </tbody>
     </table>
 
