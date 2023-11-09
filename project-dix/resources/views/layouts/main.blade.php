@@ -16,10 +16,6 @@
     <!-- Link Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <!-- Link -->
-
-    <!-- Styles -->
-    </style>
 </head>
 
 <body class="container">
@@ -34,7 +30,7 @@
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">PACIENTES</a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/pacientes">Consultar Pacientes</a></li>
-                <li><a class="dropdown-item" href="/events/create">Cadastrar Pacientes</a></li>
+                <li><a class="dropdown-item" href="/events/createPaciente">Cadastrar Pacientes</a></li>
             </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="/especialidades">ESPECIALIDADES</a></li>
@@ -45,7 +41,18 @@
 
     </ul>
 
-    @yield('content')
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                @if( session('msg'))
+                    <p class="msg">{{ session('msg')}}</p>
+                @endif
+
+                @yield('content')
+            </div>
+        </div>
+    </main>
+
 
     <footer>
         <p>Footer da Página</p>

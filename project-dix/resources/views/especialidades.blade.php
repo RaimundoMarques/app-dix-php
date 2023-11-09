@@ -15,6 +15,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Data de criação</th>
                 <th scope="col">Data de atualização</th>
+                <th scope="col">Editar</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
                 <td>{{ $nomes[$i] }}</td>
                 <td>{{ $datacriacaos[$i] }}</td>
                 <td>{{ $dataatualizacaos[$i] }}</td>
+                <td><button class="btn btn-secondary btn-sm">Editar</button></td>
                 @endfor
                 </tr>
         </tbody>

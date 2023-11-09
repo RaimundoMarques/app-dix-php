@@ -46,7 +46,7 @@ class PacientesController extends Controller
     {
         $namePage = "Cadastro de Clientes";
 
-        return view('events.create', [
+        return view('events.createPaciente', [
             'namePage' => $namePage
         ]);
     }
@@ -65,7 +65,7 @@ class PacientesController extends Controller
 
         $paciente->save();
 
-        return redirect('/home');
+        return redirect('/pacientes')->with('msg', 'Paciente cadastrado com sucesso!');
 
     }
 }

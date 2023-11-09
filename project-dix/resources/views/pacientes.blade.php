@@ -16,6 +16,8 @@
                 <th scope="col">Telefone</th>
                 <th scope="col">Cidade</th>
                 <th scope="col">Tipo</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Remover</th>
             </tr>
         </thead>
         <tbody>
@@ -26,10 +28,13 @@
                 <td>{{ $telefones[$i] }}</td>
                 <td>{{ $cidades[$i] }}</td>
                 <td>{{ $tipos[$i] }}</td>
+                <td><button class="btn btn-secondary btn-sm">Editar</button></td>
+                <td><button class="btn btn-danger btn-sm">Remover</button></td>
                 @endfor
                 </tr>
         </tbody>
     </table>
+    
 
 </div>
 

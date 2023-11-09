@@ -2,6 +2,17 @@
     font-family: 'Roboto';
 }
 
+.msg{
+    background-color: rgb(176, 224, 148);
+    color: #ffffff;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;    
+    padding: 15px;
+    font-size: 16pt;
+}
+
 
 li{
     display: inline;
@@ -31,3 +42,7 @@ form{
 .form-group{
     margin-top: 15px;
 }
+
+
+
+/* ***************************** */

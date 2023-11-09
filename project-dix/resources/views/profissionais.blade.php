@@ -17,6 +17,7 @@
                 <th scope="col">CPF</th>
                 <th scope="col">Telefone</th>
                 <th scope="col">Cidade</th>
+                <th scope="col">Editar</th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +27,9 @@
                 <td>{{ $cpfs[$i] }}</td>
                 <td>{{ $telefones[$i] }}</td>
                 <td>{{ $cidades[$i] }}</td>
+                <td><button class="btn btn-secondary btn-sm">Editar</button></td>
                 @endfor
-                </tr>
+                </tr>  
         </tbody>
     </table>
 

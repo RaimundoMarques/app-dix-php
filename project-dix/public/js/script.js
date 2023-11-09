@@ -3,14 +3,14 @@ console.log("Aquivo script javascript")
 
 
 btnHome = () => {
-    alert("Você está entrando no sistema!")
+    alert("Seja Bem-vindo!")
 
     window.document.location =  ('http://localhost:8000/home')
 }
 
 
 btnSair = () => {
-    alert("Você está saindo do sistema!")
+    alert("Obrigado!")
 
     window.document.location =  ('http://localhost:8000/')
 }
@@ -21,3 +21,7 @@ btnPacienteVoltar = () => {
 
     window.document.location =  ('http://localhost:8000/home')
 }
+
+// **********************************************************************
+// CRIANDO MODAL DELETE
+
