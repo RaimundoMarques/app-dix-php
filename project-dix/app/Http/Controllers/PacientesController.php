@@ -8,8 +8,23 @@ use App\Models\Paciente;
 
 class PacientesController extends Controller
 {
-    public function pacientes()
+    public function index()
     {
+        $search = request('search');
+        if ($search) {
+
+            // $paciente = Paciente::where(
+            //     ['nome', 'like', '%' . $search . '%']
+            // )->get();
+
+            $paciente = Paciente::where([$search ])->get();
+
+        } else {
+
+            //$paciente = Paciente::all();
+
+        }
+
         $nameApp = "Sistema de Agendamento DIX";
         $namePage = "Pacientes";
 
@@ -37,6 +52,7 @@ class PacientesController extends Controller
             'telefones' => $telefones,
             'cidades' => $cidades,
             'tipos' => $tipos,
+            'search' => $search,
             'nameApp' => $nameApp,
             'namePage' => $namePage
         ]);
@@ -53,7 +69,8 @@ class PacientesController extends Controller
 
 
     // Gravando dados formulário
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         $paciente = new Paciente;
 
@@ -66,17 +83,16 @@ class PacientesController extends Controller
         $paciente->save();
 
         return redirect('/pacientes')->with('msg', 'Paciente cadastrado com sucesso!');
-
     }
 
     // Buscar paciente por ID
-    public function show($id){
+    public function show($id)
+    {
 
         $paciente = Paciente::findOrFail($id);
 
         return view('events.showPaciente', [
-                'paciente' => $paciente
+            'paciente' => $paciente
         ]);
-
     }
 }

@@ -3,8 +3,15 @@
 @section('title', $namePage)
 
 @section('content')
-<h2>Pacientes</h2>
 
+<h2 class="f-2">Pacientes</h2>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form method="GET" action="pacientes" class="form-inline my-2 my-lg-1">
+            <input class="form-control" type="text" id="search" name="search" placeholder="Busca..." aria-label="Search">
+        </form>
+    </div>
+</nav>
 <div class="container">
 
     <table class="table table-hover">

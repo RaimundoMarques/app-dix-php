@@ -29,7 +29,7 @@ use App\Http\Controllers\ServicosController;
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/home', [HomeController::class, 'home']);
 Route::get('/servicos', [ServicosController::class, 'servicos']);
-Route::get('/pacientes', [PacientesController::class, 'pacientes']);
+Route::get('/pacientes', [PacientesController::class, 'index']);
 Route::get('/especialidades', [EspecialidadeController::class, 'especialidades']);
 Route::get('/profissionais', [ProfissionaisController::class, 'profissionais']);
 Route::get('/clinicas', [ClinicasController::class, 'clinicas']);
