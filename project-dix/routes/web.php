@@ -37,6 +37,7 @@ Route::get('/clinicasServicos', [ClinicasServicosController::class, 'clinicasSer
 
 // Rotas events
 Route::get('/events/createPaciente', [PacientesController::class, 'create']);
+Route::get('/events/{id}', [PacientesController::class, 'show']);
 Route::post('/events', [PacientesController::class, 'store']);
 
 // Métodos DELETE

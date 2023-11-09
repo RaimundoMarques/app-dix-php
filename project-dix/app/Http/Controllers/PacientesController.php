@@ -68,4 +68,15 @@ class PacientesController extends Controller
         return redirect('/pacientes')->with('msg', 'Paciente cadastrado com sucesso!');
 
     }
+
+    // Buscar paciente por ID
+    public function show($id){
+
+        $paciente = Paciente::findOrFail($id);
+
+        return view('events.showPaciente', [
+                'paciente' => $paciente
+        ]);
+
+    }
 }

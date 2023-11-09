@@ -28,13 +28,13 @@
                 <td>{{ $telefones[$i] }}</td>
                 <td>{{ $cidades[$i] }}</td>
                 <td>{{ $tipos[$i] }}</td>
-                <td><button class="btn btn-secondary btn-sm">Editar</button></td>
+                <td><a type="button" href="/events/{{ $ids[$i] }}" class="btn btn-secondary btn-sm">Editar</a></td>
                 <td><button class="btn btn-danger btn-sm">Remover</button></td>
                 @endfor
                 </tr>
         </tbody>
     </table>
-    
+
 
 </div>
 
