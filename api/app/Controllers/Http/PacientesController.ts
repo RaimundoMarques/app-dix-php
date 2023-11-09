@@ -12,4 +12,18 @@ export default class PacientesController {
             data: paciente
         }
     }
+
+
+    // método DELETE
+    public async destroy({ params }: HttpContextContract) {
+
+        const paciente = await Paciente.findOrFail(params.id)
+        await paciente.delete()
+
+        return {
+            message: "Paciente deletado com Sucesso!",
+            data: paciente,
+        }
+    }
+
 }

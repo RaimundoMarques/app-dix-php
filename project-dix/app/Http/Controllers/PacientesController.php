@@ -16,9 +16,27 @@ class PacientesController extends Controller
         $return = Http::get('http://localhost:3333/api/pacientes')->json();
         $data = array_reverse($return['data']);
 
+        //dd($data);
+
+        for ($i = 0; $i < count($data); $i++) {
+            extract($data[$i]);
+
+            $ids[] = $id;
+            $nomes[] = $nome;
+            $cpfs[] = $cpf;
+            $telefones[] = $telefone;
+            $cidades[] = $cidade;
+            $tipos[] = $tipo;
+        }
+
         return view('/pacientes', [
-            'data' => $data,
-            'nameApp' => $nameApp, 
+            'ids' => $ids,
+            'nomes' => $nomes,
+            'cpfs' => $cpfs,
+            'telefones' => $telefones,
+            'cidades' => $cidades,
+            'tipos' => $tipos,
+            'nameApp' => $nameApp,
             'namePage' => $namePage
         ]);
     }

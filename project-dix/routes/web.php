@@ -25,6 +25,8 @@ use App\Http\Controllers\ServicosController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Métodos GET
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/home', [HomeController::class, 'home']);
 Route::get('/servicos', [ServicosController::class, 'servicos']);
@@ -33,3 +35,8 @@ Route::get('/especialidades', [EspecialidadeController::class, 'especialidades']
 Route::get('/profissionais', [ProfissionaisController::class, 'profissionais']);
 Route::get('/clinicas', [ClinicasController::class, 'clinicas']);
 Route::get('/clinicasServicos', [ClinicasServicosController::class, 'clinicasServicos']);
+
+
+// Métodos DELETE
+// Métodos UPDATE
+// Métodos CREATE
