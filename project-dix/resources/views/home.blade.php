@@ -5,8 +5,8 @@
 @section('content')
 <h2 class="f-2">Home</h2>
 
-<div class="container">
-    <img src="/img/img-page-home.png" class="img-fluid" alt="Imagem DIX Home">
-</div>
+
+<img src="/img/img-page-home.png" class="img-fluid rounded mx-auto d-block" alt="Imagem DIX Home">
+
 
 @endsection
