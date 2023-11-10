@@ -12,17 +12,18 @@ class PacientesController extends Controller
     public function index()
     {
         $search = request('search');
+
         if ($search) {
 
-            // $paciente = Paciente::where(
-            //     ['nome', 'like', '%' . $search . '%']
-            // )->get();
 
-            $paciente = Paciente::where([$search])->get();
+            $paciente = Paciente::where([
+                ['nome', 'like', '%' . $search . '%']
+            ])->get();
+
+
         } else {
 
-            //$paciente = Paciente::all();
-
+            $paciente = Paciente::all();
         }
 
         $nameApp = "Sistema de Agendamento DIX";
@@ -31,12 +32,6 @@ class PacientesController extends Controller
         // retornando dados da api
         $return = Http::get('http://localhost:3333/api/pacientes')->json();
         $data = array_reverse($return['data']);
-
-        if (count($data) == 0) {
-            return redirect('/index');
-        }
-
-        //dd($data);
 
         for ($i = 0; $i < count($data); $i++) {
             extract($data[$i]);
@@ -47,6 +42,10 @@ class PacientesController extends Controller
             $telefones[] = $telefone;
             $cidades[] = $cidade;
             $tipos[] = $tipo;
+        }
+
+        if (count($data) == 0) {
+            return redirect('/home');
         }
 
         return view('/pacientes', [
@@ -62,6 +61,8 @@ class PacientesController extends Controller
         ]);
     }
 
+
+
     public function create()
     {
         $namePage = "Cadastro de Clientes";
@@ -70,6 +71,8 @@ class PacientesController extends Controller
             'namePage' => $namePage
         ]);
     }
+
+
 
 
     // Insert data
@@ -88,6 +91,8 @@ class PacientesController extends Controller
         return redirect('/pacientes')->with('msg', 'Paciente cadastrado com sucesso!');
     }
 
+
+
     // Buscar paciente por ID
     public function show($id)
     {
@@ -96,6 +101,8 @@ class PacientesController extends Controller
             'paciente' => $paciente
         ]);
     }
+
+
 
     public function showDelete($id)
     {

@@ -8,7 +8,7 @@
 
 <div class="container">
 
-    <table class="table table-hover">
+    <table class="table table-hover text-left">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -20,10 +20,10 @@
         </thead>
         <tbody>
             @for($i=0; $i < count($ids); $i++) <tr>
-                <th scope='row'>{{ $ids[$i] }}</th>
+                <th scope='row'>*</th>
                 <td>{{ $nomes[$i] }}</td>
-                <td>{{ $datacriacaos[$i] }}</td>
-                <td>{{ $dataatualizacaos[$i] }}</td>
+                <td>{{ date('d/m/Y', strtotime($datacriacaos[$i])) }}</td>
+                <td>{{ date('d/m/Y', strtotime($dataatualizacaos[$i])) }}</td>
                 <td><button class="btn btn-secondary btn-sm">Editar</button></td>
                 @endfor
                 </tr>

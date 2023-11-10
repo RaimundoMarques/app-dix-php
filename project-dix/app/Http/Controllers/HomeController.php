@@ -12,12 +12,8 @@ class HomeController extends Controller
         $nameApp = "Sistema de Agendamento DIX";
         $namePage = "Home";
 
-        // retornando dados da api
-        // $return = Http::get('http://localhost:3333/api/users')->json();
-        // $data = $return['data'];
-
         return view('/home', [
-            'nameApp' => $nameApp, 
+            'nameApp' => $nameApp,
             'namePage' => $namePage
         ]);
     }
