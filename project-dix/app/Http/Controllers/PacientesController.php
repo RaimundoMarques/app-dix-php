@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\Paciente;
+use Illuminate\Cache\RedisTagSet;
 
 class PacientesController extends Controller
 {
@@ -17,8 +18,7 @@ class PacientesController extends Controller
             //     ['nome', 'like', '%' . $search . '%']
             // )->get();
 
-            $paciente = Paciente::where([$search ])->get();
-
+            $paciente = Paciente::where([$search])->get();
         } else {
 
             //$paciente = Paciente::all();
@@ -31,6 +31,10 @@ class PacientesController extends Controller
         // retornando dados da api
         $return = Http::get('http://localhost:3333/api/pacientes')->json();
         $data = array_reverse($return['data']);
+
+        if(count($data) == 0){
+            return redirect('/index');
+        }
 
         //dd($data);
 
@@ -68,7 +72,7 @@ class PacientesController extends Controller
     }
 
 
-    // Gravando dados formulário
+    // Insert data
     public function store(Request $request)
     {
 
@@ -94,5 +98,27 @@ class PacientesController extends Controller
         return view('events.showPaciente', [
             'paciente' => $paciente
         ]);
+    }
+
+
+    public function showDelete($id)
+    {
+
+        $paciente = Paciente::findOrFail($id);
+
+        $namePage = "Deletar usuário";
+
+        return view('/events.deletePaciente', [
+            'paciente' => $paciente,
+            'namePage' => $namePage
+        ]);
+    }
+
+
+    public function destroy($id)
+    {
+        Paciente::findOrFail($id)->delete();
+
+        return redirect('/pacientes');
     }
 }

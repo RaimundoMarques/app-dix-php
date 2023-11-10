@@ -29,17 +29,15 @@ use App\Http\Controllers\ServicosController;
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/home', [HomeController::class, 'home']);
 Route::get('/servicos', [ServicosController::class, 'servicos']);
-Route::get('/pacientes', [PacientesController::class, 'index']);
 Route::get('/especialidades', [EspecialidadeController::class, 'especialidades']);
 Route::get('/profissionais', [ProfissionaisController::class, 'profissionais']);
 Route::get('/clinicas', [ClinicasController::class, 'clinicas']);
 Route::get('/clinicasServicos', [ClinicasServicosController::class, 'clinicasServicos']);
 
-// Rotas events
+// Rotas Paciente
+Route::get('/pacientes', [PacientesController::class, 'index']);
 Route::get('/events/createPaciente', [PacientesController::class, 'create']);
+Route::get('/events/deletePaciente/{id}', [PacientesController::class, 'showDelete']);
 Route::get('/events/{id}', [PacientesController::class, 'show']);
 Route::post('/events', [PacientesController::class, 'store']);
-
-// Métodos DELETE
-// Métodos UPDATE
-// Métodos CREATE
+Route::delete('/events/{id}', [PacientesController::class, 'destroy']);

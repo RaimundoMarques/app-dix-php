@@ -12,9 +12,9 @@
         </form>
     </div>
 </nav>
-<div class="container">
+<div class="container d-flex">
 
-    <table class="table table-hover">
+    <table class="table table-hover text-muted">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -29,14 +29,14 @@
         </thead>
         <tbody>
             @for($i=0; $i < count($ids); $i++) <tr>
-                <th scope='row'>{{ $ids[$i] }}</th>
+                <th scope='row'>*</th>
                 <td>{{ $nomes[$i] }}</td>
                 <td>{{ $cpfs[$i] }}</td>
                 <td>{{ $telefones[$i] }}</td>
                 <td>{{ $cidades[$i] }}</td>
                 <td>{{ $tipos[$i] }}</td>
                 <td><a type="button" href="/events/{{ $ids[$i] }}" class="btn btn-success max-100 btn-sm text-center d-grid gap-2">Ver</a></td>
-                <td><a type="button" href="/events/{{ $ids[$i] }}" class="btn btn-danger btn-sm">Remover</a></td>
+                <td><a type="button" href="/events/deletePaciente/{{ $ids[$i] }}" class="btn btn-danger btn-sm">Remover</a></td>
                 @endfor
                 </tr>
         </tbody>

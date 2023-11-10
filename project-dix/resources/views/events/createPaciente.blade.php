@@ -4,39 +4,42 @@
 
 @section('content')
 
-<h2 class="f-2 text-center">Cadastrar de cliente</h2>
+<h2 class="f-2 text-left text-muted">Cadastro de cliente</h2>
 
-<div class="container">
-    <form action="/events" method="POST">
+
+<form action="/events" method="POST">
+    <div class="container w-50">
         @csrf
-        <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome">
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="nome" placeholder="Nome de usuário" required>
+            <label for="floatingInput" class="text-muted">Nome</label>
         </div>
 
-        <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite o cpf">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="cpf" placeholder="Nome de usuário" required>
+            <label for="floatingInput" class="text-muted">CPF</label>
         </div>
 
-        <div class="form-group">
-            <label for="telefone">Telefone:</label>
-            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Digite o telefone">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="telefone" placeholder="Nome de usuário" required>
+            <label for="floatingInput" class="text-muted">Telefone</label>
         </div>
 
-        <div class="form-group">
-            <label for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite a cidade">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="cidade" placeholder="Nome de usuário" required>
+            <label for="floatingInput" class="text-muted">Cidade</label>
         </div>
 
-        <div class="form-group">
-            <label for="tipo">Tipo:</label>
-            <input type="text" class="form-control" id="tipo" name="tipo" placeholder="Digite a tipo">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="tipo" placeholder="Nome de usuário" required>
+            <label for="floatingInput" class="text-muted">Tipo</label>
         </div>
 
         <div class="d-grid gap-2 mx-auto mt-4">
             <button id="div-btn-create" class="btn btn-primary" type="submit">Cadastrar</button>
         </div>
-    </form>
-</div>
+    </div>
+</form>
+
 @endsection
