@@ -20,7 +20,7 @@
         <table class="table table-hover text-muted">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    {{-- <th scope="col">#</th> --}}
                     <th scope="col">Nome</th>
                     <th scope="col">CPF</th>
                     <th scope="col">Telefone</th>
@@ -33,7 +33,7 @@
             <tbody>
                 @for ($i = 0; $i < count($ids); $i++)
                     <tr>
-                        <th scope='row'>*</th>
+                        {{-- <th scope='row'>*</th> --}}
                         <td>{{ $nomes[$i] }}</td>
                         <td>{{ $cpfs[$i] }}</td>
                         <td>{{ $telefones[$i] }}</td>

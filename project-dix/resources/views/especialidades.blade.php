@@ -11,7 +11,7 @@
     <table class="table table-hover text-left">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                {{-- <th scope="col">#</th> --}}
                 <th scope="col">Nome</th>
                 <th scope="col">Data de criação</th>
                 <th scope="col">Data de atualização</th>
@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             @for($i=0; $i < count($ids); $i++) <tr>
-                <th scope='row'>*</th>
+                {{-- <th scope='row'>*</th> --}}
                 <td>{{ $nomes[$i] }}</td>
                 <td>{{ date('d/m/Y', strtotime($datacriacaos[$i])) }}</td>
                 <td>{{ date('d/m/Y', strtotime($dataatualizacaos[$i])) }}</td>

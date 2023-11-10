@@ -7,8 +7,5 @@ use Illuminate\Support\Facades\Http;
 
 class ServicosController extends Controller
 {
-    public function servicos()
-    {
-
-    }
+    
 }

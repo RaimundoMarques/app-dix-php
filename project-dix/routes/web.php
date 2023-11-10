@@ -25,20 +25,20 @@ use App\Http\Controllers\ServicosController;
 |
 */
 
-// Métodos GET
+// index
 Route::get('/', [IndexController::class, 'index']);
+
+// Consumindo API
 Route::get('/home', [HomeController::class, 'home']);
 Route::get('/servicos', [ApiController::class, 'apiServicos']);
+Route::get('/pacientes', [ApiController::class, 'apiPacientes']);
+Route::get('/especialidades', [ApiController::class, 'apiEspecialidades']);
+Route::get('/profissionais', [ApiController::class, 'apiProfissionais']);
+Route::get('/clinicas', [ApiController::class, 'apiClinicas']);
+Route::get('/clinicasServicos', [ApiController::class, 'apiClinicasServicos']);
 
-
-
-Route::get('/especialidades', [EspecialidadeController::class, 'especialidades']);
-Route::get('/profissionais', [ProfissionaisController::class, 'profissionais']);
-Route::get('/clinicas', [ClinicasController::class, 'clinicas']);
-Route::get('/clinicasServicos', [ClinicasServicosController::class, 'clinicasServicos']);
 
 // Rotas Paciente
-Route::get('/pacientes', [ApiController::class, 'api']);
 Route::get('/events/createPaciente', [PacientesController::class, 'create']);
 Route::get('/events/deletePaciente/{id}', [PacientesController::class, 'showDelete']);
 Route::get('/events/{id}', [PacientesController::class, 'show']);

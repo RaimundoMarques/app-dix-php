@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h2 class="fs-2 text-muted">Editar Paciente</h2>
+<h2 class="fs-4 text-muted p-4">Editar dados de {{ $paciente-> nome }}</h2>
 
 
 <form action="/events/update/{{ $paciente-> id }}" method="POST" class="form-group">

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', $content -> 'namePage'  )
+@section('title', $namePage )
 
 @section('content')
     <h2>Serviços</h2>
@@ -10,7 +10,7 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    {{-- <th scope="col">#</th> --}}
                     <th scope="col">Nome</th>
                     <th scope="col">Tipo</th>
                     <th scope="col">Categoria</th>
@@ -21,7 +21,7 @@
             <tbody>
                 @for ($i = 0; $i < count($ids); $i++)
                     <tr>
-                        <th scope='row'>{{ $ids[$i] }}</th>
+                        {{-- <th scope='row'>{{ $ids[$i] }}</th> --}}
                         <td>{{ $nomes[$i] }}</td>
                         <td>{{ $tipos[$i] }}</td>
                         <td>{{ $categorias[$i] }}</td>

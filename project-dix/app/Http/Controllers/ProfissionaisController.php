@@ -7,8 +7,5 @@ use Illuminate\Support\Facades\Http;
 
 class ProfissionaisController extends Controller
 {
-    public function profissionais()
-    {
-        
-    }
+    
 }

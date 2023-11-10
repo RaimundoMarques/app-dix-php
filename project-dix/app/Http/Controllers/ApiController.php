@@ -28,7 +28,7 @@ class ApiController extends Controller
             $categorias[] = $categoria;
         }
 
-        $content[] = [ 'namePage' => "Servicos"];
+        $namePage = "Serviços";
 
         //dd($content);
 
@@ -38,7 +38,7 @@ class ApiController extends Controller
             'nomes' => $nomes,
             'tipos' => $tipos,
             'categorias' => $categorias,
-            'content' => $content
+            'namePage' => $namePage
         ]);
     }
 
@@ -54,7 +54,7 @@ class ApiController extends Controller
         //dd($data);
 
         for ($i = 0; $i < count($dataPacientesAPI); $i++) {
-            extract($data[$i]);
+            extract($dataPacientesAPI[$i]);
 
             $ids[] = $id;
             $nomes[] = $nome;
@@ -65,12 +65,12 @@ class ApiController extends Controller
         }
 
         return view('/pacientes', [
-            // 'ids' => $ids,
-            // 'nomes' => $nomes,
-            // 'cpfs' => $cpfs,
-            // 'telefones' => $telefones,
-            // 'cidades' => $cidades,
-            // 'tipos' => $tipos
+            'ids' => $ids,
+            'nomes' => $nomes,
+            'cpfs' => $cpfs,
+            'telefones' => $telefones,
+            'cidades' => $cidades,
+            'tipos' => $tipos
         ]);
     }
 
@@ -83,31 +83,23 @@ class ApiController extends Controller
         $especialidadesAPI = Http::get($urlAPI . 'especialidades')->json();
         $dataEspecialidadesAPI = array_reverse($especialidadesAPI['data']);
 
-        $profissionaisAPI = Http::get($urlAPI . 'profissionais')->json();
-        $dataProfissionaisAPI = array_reverse($profissionaisAPI['data']);
-
-        $clinicasAPI = Http::get($urlAPI . 'clinicas')->json();
-        $dataClinicasAPI = array_reverse($clinicasAPI['data']);
-
-
         for ($i = 0; $i < count($dataEspecialidadesAPI); $i++) {
-            extract($data[$i]);
+            extract($dataEspecialidadesAPI[$i]);
 
             $ids[] = $id;
             $nomes[] = $nome;
-            $cpfs[] = $cpf;
-            $telefones[] = $telefone;
-            $cidades[] = $cidade;
-            $tipos[] = $tipo;
+            $datacriacaos[] = $datacriacao;
+            $dataatualizacaos[] = $dataatualizacao;
         }
 
-        return view('/pacientes', [
-            // 'ids' => $ids,
-            // 'nomes' => $nomes,
-            // 'cpfs' => $cpfs,
-            // 'telefones' => $telefones,
-            // 'cidades' => $cidades,
-            // 'tipos' => $tipos
+        $namePage = "Especialidades";
+
+        return view('/especialidades', [
+            'ids' => $ids,
+            'nomes' => $nomes,
+            'datacriacaos' => $datacriacaos,
+            'dataatualizacaos' => $dataatualizacaos, 
+            'namePage' => $namePage
         ]);
     }
 
@@ -119,9 +111,6 @@ class ApiController extends Controller
 
         $profissionaisAPI = Http::get($urlAPI . 'profissionais')->json();
         $dataProfissionaisAPI = array_reverse($profissionaisAPI['data']);
-
-        $clinicasAPI = Http::get($urlAPI . 'clinicas')->json();
-        $dataClinicasAPI = array_reverse($clinicasAPI['data']);
 
 
         for ($i = 0; $i < count($dataProfissionaisAPI); $i++) {

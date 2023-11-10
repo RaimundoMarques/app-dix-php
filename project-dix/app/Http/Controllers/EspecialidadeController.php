@@ -7,8 +7,5 @@ use Illuminate\Support\Facades\Http;
 
 class EspecialidadeController extends Controller
 {
-    public function especialidades()
-    {
-        
-    }
+    
 }
