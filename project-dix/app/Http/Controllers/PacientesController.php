@@ -19,8 +19,6 @@ class PacientesController extends Controller
             $paciente = Paciente::where([
                 ['nome', 'like', '%' . $search . '%']
             ])->get();
-
-
         } else {
 
             $paciente = Paciente::all();
@@ -29,32 +27,7 @@ class PacientesController extends Controller
         $nameApp = "Sistema de Agendamento DIX";
         $namePage = "Pacientes";
 
-        // retornando dados da api
-        $return = Http::get('http://localhost:3333/api/pacientes')->json();
-        $data = array_reverse($return['data']);
-
-        for ($i = 0; $i < count($data); $i++) {
-            extract($data[$i]);
-
-            $ids[] = $id;
-            $nomes[] = $nome;
-            $cpfs[] = $cpf;
-            $telefones[] = $telefone;
-            $cidades[] = $cidade;
-            $tipos[] = $tipo;
-        }
-
-        if (count($data) == 0) {
-            return redirect('/home');
-        }
-
         return view('/pacientes', [
-            'ids' => $ids,
-            'nomes' => $nomes,
-            'cpfs' => $cpfs,
-            'telefones' => $telefones,
-            'cidades' => $cidades,
-            'tipos' => $tipos,
             'search' => $search,
             'nameApp' => $nameApp,
             'namePage' => $namePage

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', $namePage)
+@section('title', 'Pacientes')
 
 @section('content')
 
@@ -14,10 +14,6 @@
             </form>
         </div>
     </nav>
-
-    @if (count($ids) == 0)
-        <p>Não há registro de pacientes!</p>
-    @endif
 
     <div class="container d-flex">
 
