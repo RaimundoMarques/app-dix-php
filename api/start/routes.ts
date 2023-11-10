@@ -26,7 +26,6 @@ Route.group(() => {
     return { app_dix: 'app_dix' }
   })
 
-  Route.resource('/users', 'FilmesController').apiOnly();
   Route.resource('/servicos', 'ServicosController').apiOnly();
   Route.resource('/pacientes', 'PacientesController').apiOnly();
   Route.resource('/especialidades', 'EspecialidadesController').apiOnly();

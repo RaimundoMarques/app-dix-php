@@ -32,7 +32,7 @@ class PacientesController extends Controller
         $return = Http::get('http://localhost:3333/api/pacientes')->json();
         $data = array_reverse($return['data']);
 
-        if(count($data) == 0){
+        if (count($data) == 0) {
             return redirect('/index');
         }
 
@@ -85,29 +85,22 @@ class PacientesController extends Controller
         $paciente->tipo     = $request->tipo;
 
         $paciente->save();
-
         return redirect('/pacientes')->with('msg', 'Paciente cadastrado com sucesso!');
     }
 
     // Buscar paciente por ID
     public function show($id)
     {
-
         $paciente = Paciente::findOrFail($id);
-
         return view('events.showPaciente', [
             'paciente' => $paciente
         ]);
     }
 
-
     public function showDelete($id)
     {
-
         $paciente = Paciente::findOrFail($id);
-
         $namePage = "Deletar usuário";
-
         return view('/events.deletePaciente', [
             'paciente' => $paciente,
             'namePage' => $namePage
@@ -118,7 +111,22 @@ class PacientesController extends Controller
     public function destroy($id)
     {
         Paciente::findOrFail($id)->delete();
+        return redirect('/pacientes')->with('msg', 'Usuário deletado com sucesso!');
+    }
 
-        return redirect('/pacientes');
+    public function showEdit($id)
+    {
+
+        $paciente = Paciente::findOrFail($id);
+
+        return view('/events.showPacientes', [
+            'paciente' => $paciente
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        Paciente::findOrFail($request->id)->update($request->all());
+        return redirect('/pacientes')->with('msg', 'Usuário editado com sucesso!');
     }
 }

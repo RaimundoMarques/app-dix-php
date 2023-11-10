@@ -39,5 +39,8 @@ Route::get('/pacientes', [PacientesController::class, 'index']);
 Route::get('/events/createPaciente', [PacientesController::class, 'create']);
 Route::get('/events/deletePaciente/{id}', [PacientesController::class, 'showDelete']);
 Route::get('/events/{id}', [PacientesController::class, 'show']);
+Route::get('/events/showPaciente/{id}', [PacientesController::class, 'showEdit']);
+Route::get('/events/edit/{id}', [PacientesController::class, 'edit']);
+Route::put('/events/update/{id}', [PacientesController::class, 'update'])->middleware('auth');
 Route::post('/events', [PacientesController::class, 'store']);
 Route::delete('/events/{id}', [PacientesController::class, 'destroy']);
