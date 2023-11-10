@@ -4,8 +4,7 @@
 
 @section('content')
 
-
-    <h2 class="f-2">Pacientes</h2>
+    <div class="container fs-2 text-muted">Pacientes</div>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form action="/pacientes" method="GET" class="form-inline my-2 my-lg-1">

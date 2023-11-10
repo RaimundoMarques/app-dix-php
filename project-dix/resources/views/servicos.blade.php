@@ -1,9 +1,10 @@
 @extends('layouts.main')
 
-@section('title', $namePage )
+@section('title', $namePage)
 
 @section('content')
-    <h2>Serviços</h2>
+
+    <div class="container fs-2 text-muted">Serviços</div>
 
     <div class="container">
 
@@ -25,8 +26,10 @@
                         <td>{{ $nomes[$i] }}</td>
                         <td>{{ $tipos[$i] }}</td>
                         <td>{{ $categorias[$i] }}</td>
-                        <td><button type="button" class="btn btn-secondary btn-sm">Editar</button></td>
-                        <td><button type="button" class="btn btn-danger btn-sm">Remover</button></td>
+                        <td><a type="button" href="/events/{{ $ids[$i] }}"
+                                class="btn btn-success max-100 btn-sm text-center d-grid gap-2">Editar</a></td>
+                        <td><a type="button" href="/events/deletePaciente/{{ $ids[$i] }}"
+                                class="btn btn-danger btn-sm">Remover</a></td>
                 @endfor
                 </tr>
             </tbody>
