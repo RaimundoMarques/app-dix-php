@@ -98,7 +98,7 @@ class ApiController extends Controller
             'ids' => $ids,
             'nomes' => $nomes,
             'datacriacaos' => $datacriacaos,
-            'dataatualizacaos' => $dataatualizacaos, 
+            'dataatualizacaos' => $dataatualizacaos,
             'namePage' => $namePage
         ]);
     }
@@ -114,23 +114,24 @@ class ApiController extends Controller
 
 
         for ($i = 0; $i < count($dataProfissionaisAPI); $i++) {
-            extract($data[$i]);
+            extract($dataProfissionaisAPI[$i]);
 
             $ids[] = $id;
             $nomes[] = $nome;
             $cpfs[] = $cpf;
             $telefones[] = $telefone;
             $cidades[] = $cidade;
-            $tipos[] = $tipo;
         }
 
-        return view('/pacientes', [
-            // 'ids' => $ids,
-            // 'nomes' => $nomes,
-            // 'cpfs' => $cpfs,
-            // 'telefones' => $telefones,
-            // 'cidades' => $cidades,
-            // 'tipos' => $tipos
+        $namePage = "Profissionais";
+
+        return view('/profissionais', [
+            'ids' => $ids,
+            'nomes' => $nomes,
+            'cpfs' => $cpfs,
+            'telefones' => $telefones,
+            'cidades' => $cidades,
+            'namePage' => $namePage
         ]);
     }
 
@@ -146,23 +147,24 @@ class ApiController extends Controller
 
 
         for ($i = 0; $i < count($dataClinicasAPI); $i++) {
-            extract($data[$i]);
+            extract($dataClinicasAPI[$i]);
 
             $ids[] = $id;
             $nomes[] = $nome;
-            $cpfs[] = $cpf;
+            $cnpjs[] = $cnpj;
             $telefones[] = $telefone;
             $cidades[] = $cidade;
-            $tipos[] = $tipo;
         }
 
-        return view('/pacientes', [
-            // 'ids' => $ids,
-            // 'nomes' => $nomes,
-            // 'cpfs' => $cpfs,
-            // 'telefones' => $telefones,
-            // 'cidades' => $cidades,
-            // 'tipos' => $tipos
+        $namePage = "Clínicas";
+
+        return view('/clinicas', [
+            'ids' => $ids,
+            'nomes' => $nomes,
+            'cnpjs' => $cnpjs,
+            'telefones' => $telefones,
+            'cidades' => $cidades,
+            'namePage' => $namePage
         ]);
     }
 }

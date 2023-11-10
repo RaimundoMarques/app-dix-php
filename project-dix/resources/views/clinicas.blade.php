@@ -11,7 +11,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                {{-- <th scope="col">#</th> --}}
                 <th scope="col">Nome</th>
                 <th scope="col">CNPJ</th>
                 <th scope="col">Telefone</th>
@@ -21,7 +21,7 @@
         </thead>
         <tbody>
             @for($i=0; $i < count($ids); $i++) <tr>
-                <th scope='row'>{{ $ids[$i] }}</th>
+                {{-- <th scope='row'>{{ $ids[$i] }}</th> --}}
                 <td>{{ $nomes[$i] }}</td>
                 <td>{{ $cnpjs[$i] }}</td>
                 <td>{{ $telefones[$i] }}</td>
