@@ -16,7 +16,7 @@
 
     <h1 class="f-1">{{ $nameApp }}</h1>
 
-    <div class="container">
+    <div class="container border m-auto w-50">
         <button class="btn btn-primary" onclick="btnHome()">
             Iniciar
         </button>

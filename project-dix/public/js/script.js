@@ -1,14 +1,5 @@
 console.log("Aquivo script javascript")
 
-
-
-btnHome = () => {
-    alert("Seja Bem-vindo!")
-
-    window.document.location =  ('http://localhost:8000/home')
-}
-
-
 btnSair = () => {
     alert("Obrigado!")
 

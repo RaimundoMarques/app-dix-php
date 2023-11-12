@@ -12,9 +12,6 @@ class IndexController extends Controller
         $nameApp = "Sistema de Agendamento DIX";
         $namePage = "Login";
 
-        return view('/index', [
-            'nameApp' => $nameApp,
-            'namePage' => $namePage
-        ]);
+        return redirect('/login');
     }
 }

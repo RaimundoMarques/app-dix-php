@@ -47,3 +47,12 @@ Route::get('/events/edit/{id}', [PacientesController::class, 'edit']);
 Route::put('/events/update/{id}', [PacientesController::class, 'update'])->middleware('auth');
 Route::post('/events', [PacientesController::class, 'store']);
 Route::delete('/events/{id}', [PacientesController::class, 'destroy']);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

@@ -20,15 +20,15 @@
 
 <body>
 
-    <header class="container">
+    <div class="container m-auto p-2 w-75">
         <h1 class="f-1">Sistema de Agendamento DIX</h1>
 
-        <ul class="nav nav-tabs p-2 d-inline-flex">
+        <ul class="nav nav-tabs p-2 w-100">
             <li class="nav-item"><a class="nav-link" href="/home">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="/servicos">SERVIÇOS</a></li>
-            <!-- <li class="nav-item"><a class="nav-link" href="/pacientes">PACIENTES</a></li> -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">PACIENTES</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">PACIENTES</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/pacientes">Consultar Pacientes</a></li>
                     <li><a class="dropdown-item" href="/events/createPaciente">Cadastrar Pacientes</a></li>
@@ -37,16 +37,15 @@
             <li class="nav-item"><a class="nav-link" href="/especialidades">ESPECIALIDADES</a></li>
             <li class="nav-item"><a class="nav-link" href="/profissionais">PROFISSIONAIS</a></li>
             <li class="nav-item"><a class="nav-link" href="/clinicas">CLÍNICAS</a></li>
-            <li class="nav-item"><a class="nav-link" href="/clinicasServicos">CLÍNICAS e SERVIÇOS</a></li>
             <li class="nav-item"><a class="nav-link" onclick="btnSair()">SAIR</a></li>
         </ul>
-    </header>
+    </div>
 
     <main class="container">
         <div class="container-fluid">
             <div class="row">
-                @if( session('msg'))
-                <p class="msg">{{ session('msg')}}</p>
+                @if (session('msg'))
+                    <p class="msg">{{ session('msg') }}</p>
                 @endif
 
                 @yield('content')
