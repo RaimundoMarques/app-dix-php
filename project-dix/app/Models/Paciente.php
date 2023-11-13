@@ -9,7 +9,15 @@ class Paciente extends Model
 {
     use HasFactory;
 
-    public function user(){
+    protected $casts = [
+        'items' => 'array'
+    ];
+
+
+    protected $guarded = [];
+
+    public function user()
+    {
         return $this->belongsTo('App\Models\User');
     }
 }

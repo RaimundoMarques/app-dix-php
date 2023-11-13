@@ -10,38 +10,38 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="container mt-2">
 
-                    <form action="/events/update/{{ $paciente-> id }}" method="POST" class="form-group">
+                    <form action="/events/update/{{ $paciente->id }}" method="POST" class="form-group">
                         @csrf
                         @method('PUT')
                         <div class="container mt-1 w-50 border">
                             <label for="Nome">Nome</label>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Nome de usuário" required>
-                                <label for="floatingInput" class="text-muted">{{ $paciente-> nome }}</label>
+                                <input type="text" class="form-control" id="floatingInput"
+                                    value="{{ $paciente->nome }}" name="nome" placeholder="Nome de usuário" required>
                             </div>
-                    
+
                             <label for="cpf">CPF</label>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="CPF" required>
-                                <label for="floatingInput" class="text-muted">{{ $paciente-> cpf }}</label>
+                                <input type="text" class="form-control" id="floatingInput"
+                                    value="{{ $paciente->cpf }}" name="cpf" placeholder="CPF" required>
                             </div>
-                    
+
                             <label for="telefone">Telefone</label>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Telefone" required>
-                                <label for="floatingInput" class="text-muted">{{ $paciente-> telefone }}</label>
+                                <input type="text" class="form-control" id="floatingInput"
+                                    value="{{ $paciente->telefone }}" name="telefone" placeholder="Telefone" required>
                             </div>
-                    
+
                             <label for="cidade">Cidade</label>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Cidade" required>
-                                <label for="floatingInput" class="text-muted">{{ $paciente-> cidade }}</label>
+                                <input type="text" class="form-control" id="floatingInput"
+                                    value="{{ $paciente->cidade }}" name="cidade" placeholder="Cidade" required>
                             </div>
-                    
+
                             <label for="cidade">Tipo</label>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Tipo" required>
-                                <label for="floatingInput" class="text-muted">{{ $paciente-> tipo }}</label>
+                                <input type="text" class="form-control" id="floatingInput"
+                                    value="{{ $paciente->tipo }}" name="tipo" placeholder="Tipo" required>
                             </div>
                             <div class="d-grid gap-2 w-25 text-center m-auto p-2">
                                 <input type="submit" class="btn btn-warning fs-5" value="Editar">
