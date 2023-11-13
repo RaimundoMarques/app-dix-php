@@ -1,18 +1,7 @@
 <?php
 
+use App\Http\Controllers\UsersEvents;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Http;
-use Symfony\Component\VarDumper\VarDumper;
-
-use App\Http\Controllers\ApiController;
-use App\Http\Controllers\ClinicasController;
-use App\Http\Controllers\ClinicasServicosController;
-use App\Http\Controllers\EspecialidadeController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\IndexController;
-use App\Http\Controllers\PacientesController;
-use App\Http\Controllers\ProfissionaisController;
-use App\Http\Controllers\ServicosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,33 +14,28 @@ use App\Http\Controllers\ServicosController;
 |
 */
 
-// index
-Route::get('/', [IndexController::class, 'index']);
 
-// Consumindo API
-Route::get('/home', [HomeController::class, 'home']);
-Route::get('/servicos', [ApiController::class, 'apiServicos']);
-Route::get('/pacientes', [ApiController::class, 'apiPacientes']);
-Route::get('/especialidades', [ApiController::class, 'apiEspecialidades']);
-Route::get('/profissionais', [ApiController::class, 'apiProfissionais']);
-Route::get('/clinicas', [ApiController::class, 'apiClinicas']);
-Route::get('/clinicasServicos', [ApiController::class, 'apiClinicasServicos']);
-
-
-// Rotas Paciente
-Route::get('/events/createPaciente', [PacientesController::class, 'create']);
-Route::get('/events/deletePaciente/{id}', [PacientesController::class, 'showDelete']);
-Route::get('/events/{id}', [PacientesController::class, 'show']);
-Route::get('/events/showPaciente/{id}', [PacientesController::class, 'showEdit']);
-Route::get('/events/edit/{id}', [PacientesController::class, 'edit']);
-Route::put('/events/update/{id}', [PacientesController::class, 'update'])->middleware('auth');
-Route::post('/events', [PacientesController::class, 'store']);
-Route::delete('/events/{id}', [PacientesController::class, 'destroy']);
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
+    Route::get('/', [UsersEvents::class, 'index'])->name('index');
+    // Rotas Serviços
+    Route::get('/servicos', [UsersEvents::class, 'servicos'])->name('servicos');
+
+
+    // Rotas Pacientes
+    Route::get('/events/editPaciente/{id}', [UsersEvents::class, 'showEdit']);
+    Route::get('/events/createPaciente', [UsersEvents::class, 'showCreate']);
+    Route::get('/pacientes', [UsersEvents::class, 'pacientes'])->name('pacientes');
+    Route::get('/events/deletePaciente/{id}', [UsersEvents::class, 'showDelete']);
+    Route::delete('/events/{id}', [UsersEvents::class, 'destroy']);
+    Route::post('/events', [UsersEvents::class, 'store'])->middleware('auth');
+    Route::put('/events/update/{id}', [UsersEvents::class, 'update']);
+    
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

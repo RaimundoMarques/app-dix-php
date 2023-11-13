@@ -1,45 +1,61 @@
-@extends('layouts.main')
+<x-app-layout>
+    <x-slot name="header">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                    {{ __('Cadastrar de Pacientes') }}
+                </h2>
+            </div>
+        </div>
+    </x-slot>
 
-@section('title', $namePage)
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="container mt-4">
 
-@section('content')
+                    <form action="/events" method="POST">
+                        <div class="container w-50">
+                            @csrf
 
-<h2 class="f-2 text-left text-muted">Cadastro de cliente</h2>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="nome"
+                                    placeholder="Nome de usuário" required>
+                                <label for="floatingInput" class="text-muted">Nome</label>
+                            </div>
 
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="cpf"
+                                    placeholder="Nome de usuário" required>
+                                <label for="floatingInput" class="text-muted">CPF</label>
+                            </div>
 
-<form action="/events" method="POST">
-    <div class="container w-50">
-        @csrf
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="telefone"
+                                    placeholder="Nome de usuário" required>
+                                <label for="floatingInput" class="text-muted">Telefone</label>
+                            </div>
 
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" name="nome" placeholder="Nome de usuário" required>
-            <label for="floatingInput" class="text-muted">Nome</label>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="cidade"
+                                    placeholder="Nome de usuário" required>
+                                <label for="floatingInput" class="text-muted">Cidade</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="tipo"
+                                    placeholder="Nome de usuário" required>
+                                <label for="floatingInput" class="text-muted">Tipo</label>
+                            </div>
+
+                            <div class="d-grid gap-2 mx-auto mt-4 mb-4">
+                                <input type="submit" class="btn btn-primary" value="Cadastrar">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
         </div>
 
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" name="cpf" placeholder="Nome de usuário" required>
-            <label for="floatingInput" class="text-muted">CPF</label>
-        </div>
-
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" name="telefone" placeholder="Nome de usuário" required>
-            <label for="floatingInput" class="text-muted">Telefone</label>
-        </div>
-
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" name="cidade" placeholder="Nome de usuário" required>
-            <label for="floatingInput" class="text-muted">Cidade</label>
-        </div>
-
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" name="tipo" placeholder="Nome de usuário" required>
-            <label for="floatingInput" class="text-muted">Tipo</label>
-        </div>
-
-        <div class="d-grid gap-2 mx-auto mt-4">
-            <button id="div-btn-create" class="btn btn-primary" type="submit">Cadastrar</button>
-        </div>
-    </div>
-</form>
-
-@endsection
+</x-app-layout>
