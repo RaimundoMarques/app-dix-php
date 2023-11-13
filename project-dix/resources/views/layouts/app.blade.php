@@ -11,7 +11,8 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="/bootstrap.5.3/css/bootstrap.min.css">
-        <script src=""></script>
+        <script src="/bootstrap.5.3/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/css/style.css">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
