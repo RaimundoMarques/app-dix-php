@@ -47,7 +47,7 @@ Route::middleware([
 
 
 
-    // Relatório PDF
+    // Rota relatório PDF
     Route::get('pdf', [PdfController::class, 'geraPdf']);
 
 
