@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\UsersEvents;
 use App\Http\Controllers\ServicosEvent;
 
@@ -43,6 +44,12 @@ Route::middleware([
     Route::delete('/events/{id}', [UsersEvents::class, 'destroy'])->name('destroy')->middleware('auth');
     Route::post('/events', [UsersEvents::class, 'store'])->name('store')->middleware('auth');
     Route::put('/events/update/{id}', [UsersEvents::class, 'update'])->name('update')->middleware('auth');
+
+
+
+    // Relatório PDF
+    Route::get('pdf', [PdfController::class, 'geraPdf']);
+
 
 
     Route::get('/dashboard', function () {
