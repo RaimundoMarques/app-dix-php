@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Servico extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'items' => 'array'
+    ];
+
+    protected $guarded = [];
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }
