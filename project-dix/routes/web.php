@@ -27,6 +27,9 @@ Route::middleware([
     // Rotas Serviços
     Route::get('/servicos', [ServicosEvent::class, 'index'])->name('index')->middleware('auth');
     Route::get('/events/createServico', [ServicosEvent::class, 'showCreate'])->name('showCreate')->middleware('auth');
+    Route::post('/events/createServico', [ServicosEvent::class, 'store'])->name('store')->middleware('auth');
+    Route::get('/events/deleteServico/{id}', [ServicosEvent::class, 'showDelete'])->name('showDelete')->middleware('auth');
+    Route::delete('/events/delService/{id}', [ServicosEvent::class, 'destroy'])->name('destroy')->middleware('auth');
 
 
     // Rotas Pacientes
