@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\UsersEvents;
+use App\Http\Controllers\ServicosEvent;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,18 +25,19 @@ Route::middleware([
 
     Route::get('/', [UsersEvents::class, 'index'])->name('index');
     // Rotas Serviços
-    Route::get('/servicos', [UsersEvents::class, 'servicos'])->name('servicos');
+    Route::get('/servicos', [ServicosEvent::class, 'index'])->name('index')->middleware('auth');
+    Route::get('/events/createServico', [ServicosEvent::class, 'showCreate'])->name('showCreate')->middleware('auth');
 
 
     // Rotas Pacientes
-    Route::get('/events/editPaciente/{id}', [UsersEvents::class, 'showEdit']);
-    Route::get('/events/createPaciente', [UsersEvents::class, 'showCreate']);
-    Route::get('/pacientes', [UsersEvents::class, 'pacientes'])->name('pacientes');
-    Route::get('/events/deletePaciente/{id}', [UsersEvents::class, 'showDelete']);
-    Route::delete('/events/{id}', [UsersEvents::class, 'destroy']);
-    Route::post('/events', [UsersEvents::class, 'store'])->middleware('auth');
-    Route::put('/events/update/{id}', [UsersEvents::class, 'update']);
-    
+    Route::get('/events/editPaciente/{id}', [UsersEvents::class, 'showEdit'])->name('showEdit')->middleware('auth');
+    Route::get('/events/createPaciente', [UsersEvents::class, 'showCreate'])->name('showCreate')->middleware('auth');
+    Route::get('/pacientes', [UsersEvents::class, 'pacientes'])->name('pacientes')->middleware('auth');
+    Route::get('/events/deletePaciente/{id}', [UsersEvents::class, 'showDelete'])->name('showDelete')->middleware('auth');
+    Route::delete('/events/{id}', [UsersEvents::class, 'destroy'])->name('destroy')->middleware('auth');
+    Route::post('/events', [UsersEvents::class, 'store'])->name('store')->middleware('auth');
+    Route::put('/events/update/{id}', [UsersEvents::class, 'update'])->name('update')->middleware('auth');
+
 
     Route::get('/dashboard', function () {
         return view('dashboard');

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
-use App\Models\Servico;
 
 class UsersEvents extends Controller
 {
@@ -19,31 +18,17 @@ class UsersEvents extends Controller
 
         if ($search) {
 
-
             $paciente = Paciente::where([
                 ['nome', 'like', '%' . $search . '%']
             ])->get();
-
-            //dd($paciente);
-
         } else {
 
             $paciente = Paciente::all();
         }
 
-        $paciente = Paciente::all();
         return view('pacientes', [
-            'paciente' => $paciente
-        ]);
-    }
-
-
-    public function servicos()
-    {
-        $servico = Servico::all();
-
-        return view('servicos', [
-            'servico' => $servico
+            'paciente' => $paciente,
+            'search' => $search
         ]);
     }
 

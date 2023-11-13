@@ -13,32 +13,42 @@
                     <form action="/events/update/{{ $paciente->id }}" method="POST" class="form-group">
                         @csrf
                         @method('PUT')
-                        <div class="container mt-1 w-50 border">
-                            <label for="Nome">Nome</label>
+                        <div class="container mt-1 w-50">
+                            <label for="Nome" class="fs-5">
+                                <strong>Nome</strong>
+                            </label>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput"
                                     value="{{ $paciente->nome }}" name="nome" placeholder="Nome de usuário" required>
                             </div>
 
-                            <label for="cpf">CPF</label>
+                            <label for="Nome" class="fs-5">
+                                <strong>CPF</strong>
+                            </label>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput"
                                     value="{{ $paciente->cpf }}" name="cpf" placeholder="CPF" required>
                             </div>
 
-                            <label for="telefone">Telefone</label>
+                            <label for="Nome" class="fs-5">
+                                <strong>Telefone</strong>
+                            </label>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput"
                                     value="{{ $paciente->telefone }}" name="telefone" placeholder="Telefone" required>
                             </div>
 
-                            <label for="cidade">Cidade</label>
+                            <label for="Nome" class="fs-5">
+                                <strong>Cidade</strong>
+                            </label>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput"
                                     value="{{ $paciente->cidade }}" name="cidade" placeholder="Cidade" required>
                             </div>
 
-                            <label for="cidade">Tipo</label>
+                            <label for="Nome" class="fs-5">
+                                <strong>Tipo</strong>
+                            </label>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput"
                                     value="{{ $paciente->tipo }}" name="tipo" placeholder="Tipo" required>
@@ -51,5 +61,6 @@
                 </div>
             </div>
         </div>
+    </div>
 
 </x-app-layout>

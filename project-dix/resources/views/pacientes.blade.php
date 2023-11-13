@@ -1,6 +1,5 @@
 <x-app-layout>
     <x-slot name="header">
-
         <div class="row text-center">
             <div class="col-md-6">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -25,17 +24,22 @@
                 @if (count($paciente) == 0)
                     <p class="fs-1 text-muted p-4 text-center">Não há registros para serem exibidos</p>
                 @else
+                    <div class="row mt-2">
+                        @if (session('msg'))
+                            <p class="msg">{{ session('msg') }}</p>
+                        @endif
+                    </div>
+
                     <div class="container p-5">
 
-                        <div class="row">
-                            @if (session('msg'))
-                                <p class="msg">{{ session('msg') }}</p>
-                            @endif
-                        </div>
-
                         <form action="/pacientes" method="GET" class="form-inline my-2 my-lg-1">
-                            <input class="form-control rounded" type="text" id="search" name="search"
-                                placeholder="Busca..." aria-label="Search">
+                            <input 
+                            class="form-control rounded" 
+                            type="text" 
+                            id="search" 
+                            name="search"
+                            placeholder="Busca..." 
+                            aria-label="Search">
                         </form>
                     </div>
 

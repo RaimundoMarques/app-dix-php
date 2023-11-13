@@ -3,11 +3,13 @@
         <div class="row text-center">
             <div class="col-md-12">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    {{ __('Cadastrar Paciente') }}
+                    {{ __('Cadastrar Serviço') }}
                 </h2>
             </div>
         </div>
     </x-slot>
+
+    {{-- Nome	Tipo	Categoria	Editar	Remover --}}
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -25,27 +27,15 @@
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="cpf"
-                                    placeholder="Nome de usuário" required>
-                                <label for="floatingInput" class="text-muted">CPF</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="telefone"
-                                    placeholder="Nome de usuário" required>
-                                <label for="floatingInput" class="text-muted">Telefone</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="cidade"
-                                    placeholder="Nome de usuário" required>
-                                <label for="floatingInput" class="text-muted">Cidade</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput" name="tipo"
-                                    placeholder="Nome de usuário" required>
+                                    placeholder="Tipo" required>
                                 <label for="floatingInput" class="text-muted">Tipo</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="categoria"
+                                    placeholder="Categoria" required>
+                                <label for="floatingInput" class="text-muted">Categoria</label>
                             </div>
 
                             <div class="d-grid gap-2 mx-auto mt-4 mb-4">

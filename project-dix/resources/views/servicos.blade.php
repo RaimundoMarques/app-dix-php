@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-6">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    <a href="#" class="btn btn-primary">{{ __('Cadastrar Serviço') }}</a>
+                    <a href="/events/createServico" class="btn btn-primary">{{ __('Cadastrar Serviço') }}</a>
                 </h2>
             </div>
         </div>
