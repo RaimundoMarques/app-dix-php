@@ -9,10 +9,21 @@ class ServicosEvent extends Controller
 {
     public function index()
     {
-        $servico = Servico::all();
+        $search = request('search');
+
+        if ($search) {
+
+            $servico = Servico::where([
+                ['nome', 'like', '%' . $search . '%']
+            ])->get();
+        } else {
+
+            $servico = Servico::all();
+        }
 
         return view('servicos', [
-            'servico' => $servico
+            'servico' => $servico,
+            'search' => $search
         ]);
     }
 
@@ -30,8 +41,8 @@ class ServicosEvent extends Controller
         $servico->tipo      = $request->tipo;
         $servico->categoria = $request->categoria;
 
-        // $user = auth()->user();
-        // $servico->user_id = $user->id;
+        $user = auth()->user();
+        $servico->user_id = $user->id;
 
         $servico->save();
         return redirect('/servicos')->with('msg', 'Serviço criado com sucesso!');
@@ -51,6 +62,21 @@ class ServicosEvent extends Controller
     public function destroy($id)
     {
         Servico::findOrFail($id)->delete();
-        return redirect('/servicos')->with('msg', 'Serviço deletado com sucesso!');
+        return redirect('/servicos')->with('msg', 'Serviço deletado!');
+    }
+
+
+    public function showEdit($id)
+    {
+        $servico = Servico::findOrFail($id);
+        return view('/events.editServico', [
+            'servico' => $servico
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        Servico::findOrFail($request->id)->update($request->all());
+        return redirect('/servicos')->with('msg', 'Serviço alterado!');
     }
 }

@@ -19,8 +19,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-
-
                 @if (count($paciente) == 0)
                     <p class="fs-1 text-muted p-4 text-center">Não há registros para serem exibidos</p>
                 @else

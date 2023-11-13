@@ -22,13 +22,13 @@
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput" name="nome"
                                     placeholder="Nome de usuário" required>
-                                <label for="floatingInput" class="text-muted">Nome</label>
+                                <label for="floatingInput" class="text-muted">Nome do serviço</label>
                             </div>
 
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput" name="tipo"
                                     placeholder="Tipo" required>
-                                <label for="floatingInput" class="text-muted">Tipo</label>
+                                <label for="floatingInput" class="text-muted">Tipo de serviço</label>
                             </div>
 
                             <div class="form-floating mb-3">

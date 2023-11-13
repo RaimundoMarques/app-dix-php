@@ -20,6 +20,25 @@
                 @if (count($servico) == 0)
                     <p class="fs-1 text-muted p-4 text-center">Não há registros para serem exibidos</p>
                 @else
+                    <div class="row mt-2">
+                        @if (session('msg'))
+                            <p class="msg">{{ session('msg') }}</p>
+                        @endif
+                    </div>
+
+                    <div class="container p-5">
+
+                        <form action="/servicos" method="GET" class="form-inline my-2 my-lg-1">
+                            <input 
+                            class="form-control rounded" 
+                            type="text" 
+                            id="search" 
+                            name="search"
+                            placeholder="Busca..." 
+                            aria-label="Search">
+                        </form>
+                    </div>
+
                     <div class="container mt-2">
 
                         <table class="table table-hover">
@@ -41,7 +60,7 @@
                                         <td>{{ $item->tipo }}</td>
                                         <td>{{ $item->categoria }}</td>
                                         <td>
-                                            <a type="link" href="/events/{{ $item->id }}">
+                                            <a type="link" href="/events/editServico/{{ $item->id }}">
                                                 <button
                                                     class="btn btn-success btn-sm text-center d-grid gap-2">Editar</button>
                                             </a>

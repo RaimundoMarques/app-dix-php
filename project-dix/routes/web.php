@@ -30,6 +30,9 @@ Route::middleware([
     Route::post('/events/createServico', [ServicosEvent::class, 'store'])->name('store')->middleware('auth');
     Route::get('/events/deleteServico/{id}', [ServicosEvent::class, 'showDelete'])->name('showDelete')->middleware('auth');
     Route::delete('/events/delService/{id}', [ServicosEvent::class, 'destroy'])->name('destroy')->middleware('auth');
+    Route::get('/events/editServico/{id}', [ServicosEvent::class, 'showEdit'])->name('showEdit')->middleware('auth');
+    Route::put('/events/updateServico/{id}', [ServicosEvent::class, 'update'])->name('update')->middleware('auth');
+
 
 
     // Rotas Pacientes
