@@ -48,7 +48,10 @@ Route::middleware([
 
 
     // Relatório PDF
-    Route::get('pdf', [PdfController::class, 'geraPdf']);
+    Route::get('/pdf', [PdfController::class, 'geraPdf']);
+    Route::get('/relatorios', [PdfController::class, 'relatorios'])->name('relatorios')->middleware('auth');
+    Route::get('/relatorios/visualizar', [PdfController::class, 'visualizar'])->name('visualizar')->middleware('auth');
+    Route::get('/relatorios/imprimir', [PdfController::class, 'imprimir'])->name('imprimir')->middleware('auth');
 
 
 
