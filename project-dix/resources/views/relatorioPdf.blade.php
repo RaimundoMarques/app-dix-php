@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PDF</title>
-    <link rel="stylesheet" href="/bootstrap.5.3/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         * {
             font-family: 'Roboto';
@@ -14,7 +11,7 @@
 
         .titulos {
             text-align: center;
-            font-size: 22pt;
+            font-size: 18pt;
             padding: 15px;
         }
 
@@ -22,14 +19,12 @@
         tr,
         th {
             text-align: left;
-            border: 1px solid black;
         }
 
         tbody,
         tr,
         td {
             text-align: left;
-            border: .1px solid black;
         }
     </style>
 </head>
@@ -38,7 +33,8 @@
 
     <div class="titulos">Lista de pacientes</div>
 
-    <table class="table">
+    <table class="table table-striped">
+
         <thead>
             <tr>
                 <th scope="col">Nome</th>
@@ -61,6 +57,28 @@
         </tbody>
     </table>
 
-</body>
+    <hr>
 
-</html>
+    <div class="titulos">Lista de serviços</div>
+
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($servico as $item)
+                <tr>
+                    <td>{{ $item->nome }}</td>
+                    <td>{{ $item->tipo }}</td>
+                    <td>{{ $item->categoria }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+</body>
