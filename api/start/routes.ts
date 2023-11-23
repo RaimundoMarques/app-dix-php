@@ -28,8 +28,6 @@ Route.group(() => {
 
   Route.resource('/servicos', 'ServicosController').apiOnly();
   Route.resource('/pacientes', 'PacientesController').apiOnly();
-  Route.resource('/especialidades', 'EspecialidadesController').apiOnly();
-  Route.resource('/profissionais', 'ProfissionaisController').apiOnly();
-  Route.resource('/clinicas', 'ClinicasController').apiOnly();
+
 
 }).prefix('/api')
