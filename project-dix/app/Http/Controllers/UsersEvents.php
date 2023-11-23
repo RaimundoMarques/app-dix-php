@@ -7,7 +7,7 @@ use App\Models\Paciente;
 
 class UsersEvents extends Controller
 {
-    public function index()
+    public function dashboard()
     {
         return view('dashboard');
     }

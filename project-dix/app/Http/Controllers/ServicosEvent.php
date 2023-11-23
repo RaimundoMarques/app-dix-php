@@ -7,7 +7,7 @@ use App\Models\Servico;
 
 class ServicosEvent extends Controller
 {
-    public function index()
+    public function servicos()
     {
         $search = request('search');
 
@@ -31,7 +31,6 @@ class ServicosEvent extends Controller
     {
         return view('events.createServico');
     }
-
     public function store(Request $request)
     {
 

@@ -14,7 +14,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="container mt-4">
 
-                    <form action="/events" method="POST">
+                    <form action="/createPaciente" method="POST">
                         <div class="container w-50">
                             @csrf
 
