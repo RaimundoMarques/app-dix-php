@@ -14,26 +14,26 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="container mt-4">
 
-                    <form action="/events" method="POST">
+                    <form action="/createPaciente" method="POST">
                         <div class="container w-50">
                             @csrf
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="nome"
+                                <input type="text" class="form-control" id="inputname" name="nome"
                                     placeholder="Nome de usuário" required>
-                                <label for="floatingInput" class="text-muted">Nome</label>
+                                <label for="inputname" class="text-muted">Nome</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="cpf"
+                                <input type="text" class="form-control" id="inputcpf" name="cpf"
                                     placeholder="Nome de usuário" required>
-                                <label for="floatingInput" class="text-muted">CPF</label>
+                                <label for="inputcpf" class="text-muted">CPF</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="telefone"
+                                <input type="text" class="form-control" id="inputtelefone" name="telefone"
                                     placeholder="Nome de usuário" required>
-                                <label for="floatingInput" class="text-muted">Telefone</label>
+                                <label for="inputtelefone" class="text-muted">Telefone</label>
                             </div>
 
                             <div class="form-floating mb-3">

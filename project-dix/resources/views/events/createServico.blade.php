@@ -15,7 +15,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="container mt-4">
 
-                    <form action="/events/createServico" method="POST">
+                    <form action="/createServico" method="POST">
                         <div class="container w-50">
                             @csrf
 

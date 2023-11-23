@@ -24,11 +24,11 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
-    Route::get('/', [UsersEvents::class, 'index'])->name('index');
+    Route::get('/', [UsersEvents::class, 'dashboard'])->name('dashboard');
     // Rotas Serviços
-    Route::get('/servicos', [ServicosEvent::class, 'index'])->name('index')->middleware('auth');
+    Route::get('/servicos', [ServicosEvent::class, 'servicos'])->name('servicos')->middleware('auth');
     Route::get('/events/createServico', [ServicosEvent::class, 'showCreate'])->name('showCreate')->middleware('auth');
-    Route::post('/events/createServico', [ServicosEvent::class, 'store'])->name('store')->middleware('auth');
+    Route::post('/createServico', [ServicosEvent::class, 'store'])->name('store')->middleware('auth');
     Route::get('/events/deleteServico/{id}', [ServicosEvent::class, 'showDelete'])->name('showDelete')->middleware('auth');
     Route::delete('/events/delService/{id}', [ServicosEvent::class, 'destroy'])->name('destroy')->middleware('auth');
     Route::get('/events/editServico/{id}', [ServicosEvent::class, 'showEdit'])->name('showEdit')->middleware('auth');
@@ -37,12 +37,12 @@ Route::middleware([
 
 
     // Rotas Pacientes
-    Route::get('/events/editPaciente/{id}', [UsersEvents::class, 'showEdit'])->name('showEdit')->middleware('auth');
-    Route::get('/events/createPaciente', [UsersEvents::class, 'showCreate'])->name('showCreate')->middleware('auth');
     Route::get('/pacientes', [UsersEvents::class, 'pacientes'])->name('pacientes')->middleware('auth');
+    Route::get('/events/createPaciente', [UsersEvents::class, 'showCreate'])->name('showCreate')->middleware('auth');
+    Route::post('/createPaciente', [UsersEvents::class, 'store'])->name('store')->middleware('auth');
     Route::get('/events/deletePaciente/{id}', [UsersEvents::class, 'showDelete'])->name('showDelete')->middleware('auth');
     Route::delete('/events/{id}', [UsersEvents::class, 'destroy'])->name('destroy')->middleware('auth');
-    Route::post('/events', [UsersEvents::class, 'store'])->name('store')->middleware('auth');
+    Route::get('/events/editPaciente/{id}', [UsersEvents::class, 'showEdit'])->name('showEdit')->middleware('auth');
     Route::put('/events/update/{id}', [UsersEvents::class, 'update'])->name('update')->middleware('auth');
 
 
@@ -60,7 +60,7 @@ Route::middleware([
 
 
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
 });
