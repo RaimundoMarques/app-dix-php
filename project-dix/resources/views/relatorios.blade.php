@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="col-md-6 text-center">
-                            <x-nav-link href="{{ route('visualizar') }}" :active="request()->routeIs('visualizar')">
+                            <x-nav-link href="{{ route('visualizar') }}" :active="request()->routeIs('visualizar')" target="_blank">
                                 <button class="btn btn-secondary">
                                     {{ __('Visualizar PDF') }}
                                 </button>
