@@ -3,7 +3,7 @@
         <div class="row text-center">
             <div class="col-md-12">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    {{ __('Cadastrar Paciente') }}
+                    {{ __('Cadastrar Cliente') }}
                 </h2>
             </div>
         </div>
@@ -14,7 +14,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="container mt-4">
 
-                    <form action="/createPaciente" method="POST">
+                    <form action="/createCliente" method="POST">
                         <div class="container w-50">
                             @csrf
 

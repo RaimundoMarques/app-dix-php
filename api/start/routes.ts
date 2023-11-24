@@ -27,7 +27,6 @@ Route.group(() => {
   })
 
   Route.resource('/produtos', 'ProdutosController').apiOnly();
-  Route.resource('/pacientes', 'PacientesController').apiOnly();
 
 
 }).prefix('/api')

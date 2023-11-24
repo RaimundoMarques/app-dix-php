@@ -29,13 +29,8 @@
                     <div class="container p-5">
 
                         <form action="/produtos" method="GET" class="form-inline my-2 my-lg-1">
-                            <input 
-                            class="form-control rounded" 
-                            type="text" 
-                            id="search" 
-                            name="search"
-                            placeholder="Busca..." 
-                            aria-label="Search">
+                            <input class="form-control rounded" type="text" id="search" name="search"
+                                placeholder="Busca..." aria-label="Search">
                         </form>
                     </div>
 
@@ -58,19 +53,19 @@
                                 @foreach ($produto as $item)
                                     <tr>
                                         {{-- <th scope='row'>*</th> --}}
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->description }}</td>
-                                        <td>{{ $item->price }}</td>
-                                        <td>{{ $item->date_valid }}</td>
-                                        <td>{{ $item->image }}</td>
+                                        <td>{{ $item['name'] }}</td>
+                                        <td>{{ $item['description'] }}</td>
+                                        <td>{{ $item['price'] }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($item['date_valid'])) }}</td>
+                                        <td>{{ $item['image'] }}</td>
                                         <td>
-                                            <a type="link" href="/events/editProduto/{{ $item->id }}">
+                                            <a type="link" href="/events/editProduto/{{ $item['id'] }}">
                                                 <button
                                                     class="btn btn-success btn-sm text-center d-grid gap-2">Editar</button>
                                             </a>
                                         </td>
                                         <td>
-                                            <a type="link" href="/events/deleteProduto/{{ $item->id }}">
+                                            <a type="link" href="/events/deleteProduto/{{ $item['id'] }}">
                                                 <button
                                                     class="btn btn-danger btn-sm text-center d-grid gap-2">Remover</button>
                                             </a>

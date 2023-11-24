@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Excluindo Paciente') }}
+            {{ __('Excluindo Cliente') }}
         </h2>
     </x-slot>
 
@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="container mt-2">
 
-                    <form action="/events/{{ $paciente->id }}" method="POST">
+                    <form action="/events/{{ $cliente->id }}" method="POST">
                         @csrf
                         @method('DELETE')
 
@@ -28,12 +28,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    {{-- <th scope="row">{{ $paciente->id }}</th> --}}
-                                    <td>{{ $paciente->nome }}</td>
-                                    <td>{{ $paciente->cpf }}</td>
-                                    <td>{{ $paciente->telefone }}</td>
-                                    <td>{{ $paciente->cidade }}</td>
-                                    <td>{{ $paciente->tipo }}</td>
+                                    {{-- <th scope="row">{{ $cliente->id }}</th> --}}
+                                    <td>{{ $cliente->nome }}</td>
+                                    <td>{{ $cliente->cpf }}</td>
+                                    <td>{{ $cliente->telefone }}</td>
+                                    <td>{{ $cliente->cidade }}</td>
+                                    <td>{{ $cliente->tipo }}</td>
                                     <td>
                                         <button type="submit" class="btn btn-danger btn-sm text-center d-grid gap-2">Deletar</button>
                                     </td>

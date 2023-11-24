@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\PdfController;
-use App\Http\Controllers\PaicientesEvents;
+use App\Http\Controllers\ClientesEvents;
 use App\Http\Controllers\ProdutosEvent;
 
 use Illuminate\Support\Facades\Route;
@@ -35,15 +35,15 @@ Route::middleware([
 
 
 
-    // Rotas Pacientes
-    Route::get('/', [PaicientesEvents::class, 'dashboard'])->name('dashboard');
-    Route::get('/pacientes', [PaicientesEvents::class, 'pacientes'])->name('pacientes')->middleware('auth');
-    Route::get('/events/createPaciente', [PaicientesEvents::class, 'showCreate'])->name('showCreate')->middleware('auth');
-    Route::post('/createPaciente', [PaicientesEvents::class, 'store'])->name('store')->middleware('auth');
-    Route::get('/events/deletePaciente/{id}', [PaicientesEvents::class, 'showDelete'])->name('showDelete')->middleware('auth');
-    Route::delete('/events/{id}', [PaicientesEvents::class, 'destroy'])->name('destroy')->middleware('auth');
-    Route::get('/events/editPaciente/{id}', [PaicientesEvents::class, 'showEdit'])->name('showEdit')->middleware('auth');
-    Route::put('/events/update/{id}', [PaicientesEvents::class, 'update'])->name('update')->middleware('auth');
+    // Rotas Clientes
+    Route::get('/', [ClientesEvents::class, 'dashboard'])->name('dashboard');
+    Route::get('/clientes', [ClientesEvents::class, 'clientes'])->name('clientes')->middleware('auth');
+    Route::get('/events/createCliente', [ClientesEvents::class, 'showCreate'])->name('showCreate')->middleware('auth');
+    Route::post('/createCliente', [ClientesEvents::class, 'store'])->name('store')->middleware('auth');
+    Route::get('/events/deleteCliente/{id}', [ClientesEvents::class, 'showDelete'])->name('showDelete')->middleware('auth');
+    Route::delete('/events/{id}', [ClientesEvents::class, 'destroy'])->name('destroy')->middleware('auth');
+    Route::get('/events/editCliente/{id}', [ClientesEvents::class, 'showEdit'])->name('showEdit')->middleware('auth');
+    Route::put('/events/update/{id}', [ClientesEvents::class, 'update'])->name('update')->middleware('auth');
 
 
 

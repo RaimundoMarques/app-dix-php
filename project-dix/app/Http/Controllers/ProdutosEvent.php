@@ -2,13 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 
 class ProdutosEvent extends Controller
 {
+
+    // Método para atualizar dados na base de dados local
+    public function storeUpdate()
+    {
+        $produto = Produto::all();
+    }
+
+
+
     public function produtos()
     {
+        // Prefixo da URL API
+        $urlApi = 'http://localhost:3333/api';
+
+
+        // Variável de busca na página
         $search = request('search');
 
         if ($search) {
@@ -18,7 +33,26 @@ class ProdutosEvent extends Controller
             ])->get();
         } else {
 
+
             $produto = Produto::all();
+
+            // BLOCO PARA EXTRAIR DADOS DA API
+            // $response = Http::get("$urlApi/produtos")->json();
+            // $data = array_reverse($response['data']);
+
+            // foreach ($data as $item => $key) {
+
+            //     extract($key);
+
+            //     $produto[] = [
+            //         'id'            => $key['id'],
+            //         'name'          => $key['name'],
+            //         'description'   => $key['description'],
+            //         'price'         => $key['price'],
+            //         'date_valid'    => $key['date_valid'],
+            //         'image'         => $key['image']
+            //     ];
+            // }
         }
 
         return view('produtos', [
@@ -26,6 +60,11 @@ class ProdutosEvent extends Controller
             'search' => $search
         ]);
     }
+
+
+
+
+
 
     public function showCreate()
     {
@@ -47,7 +86,7 @@ class ProdutosEvent extends Controller
         $produto->user_id = $user->id;
 
         $produto->save();
-        return redirect('/produtos')->with('msg', 'Produo cadastrado!');
+        return redirect('/produtos')->with('msg', 'Produto cadastrado!');
     }
 
 
@@ -64,21 +103,21 @@ class ProdutosEvent extends Controller
     public function destroy($id)
     {
         Produto::findOrFail($id)->delete();
-        return redirect('/servicos')->with('msg', 'Serviço deletado!');
+        return redirect('/produtos')->with('msg', 'Produto deletado!');
     }
 
 
     public function showEdit($id)
     {
         $produto = Produto::findOrFail($id);
-        return view('/events.editServico', [
-            'servico' => $produto
+        return view('/events.editProduto', [
+            'produto' => $produto
         ]);
     }
 
     public function update(Request $request)
     {
         Produto::findOrFail($request->id)->update($request->all());
-        return redirect('/servicos')->with('msg', 'Serviço alterado!');
+        return redirect('/produtos')->with('msg', 'Produto atualizado!');
     }
 }

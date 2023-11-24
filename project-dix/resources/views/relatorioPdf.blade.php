@@ -45,7 +45,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($paciente as $item)
+            @foreach ($cliente as $item)
                 <tr>
                     <td>{{ $item->nome }}</td>
                     <td>{{ $item->cpf }}</td>
@@ -71,7 +71,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($servico as $item)
+            @foreach ($produto as $item)
                 <tr>
                     <td>{{ $item->nome }}</td>
                     <td>{{ $item->tipo }}</td>

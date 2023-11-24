@@ -13,6 +13,14 @@ class Produto extends Model
         'items' => 'array'
     ];
 
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'data_valid',
+        'image',
+    ];
+
     protected $guarded = [];
 
     public function user()

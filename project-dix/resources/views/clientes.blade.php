@@ -3,7 +3,7 @@
         <div class="row text-center">
             <div class="col-md-6">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    {{ __('Lista de Pacientes') }}
+                    {{ __('Lista de Clientes') }}
                 </h2>
             </div>
             <div class="col-md-6">
@@ -19,7 +19,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-                @if (count($paciente) == 0)
+                @if (count($cliente) == 0)
                     <p class="fs-1 text-muted p-4 text-center">Não há registros para serem exibidos</p>
                 @else
                     <div class="row mt-2">
@@ -30,7 +30,7 @@
 
                     <div class="container p-5">
 
-                        <form action="/pacientes" method="GET" class="form-inline my-2 my-lg-1">
+                        <form action="/clientes" method="GET" class="form-inline my-2 my-lg-1">
                             <input 
                             class="form-control rounded" 
                             type="text" 
