@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\PdfController;
-use App\Http\Controllers\UsersEvents;
+use App\Http\Controllers\PaicientesEvents;
 use App\Http\Controllers\ServicosEvent;
 
 use Illuminate\Support\Facades\Route;
@@ -24,7 +24,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
-    Route::get('/', [UsersEvents::class, 'dashboard'])->name('dashboard');
+    Route::get('/', [PaicientesEvents::class, 'dashboard'])->name('dashboard');
     // Rotas Serviços
     Route::get('/servicos', [ServicosEvent::class, 'servicos'])->name('servicos')->middleware('auth');
     Route::get('/events/createServico', [ServicosEvent::class, 'showCreate'])->name('showCreate')->middleware('auth');
@@ -37,13 +37,13 @@ Route::middleware([
 
 
     // Rotas Pacientes
-    Route::get('/pacientes', [UsersEvents::class, 'pacientes'])->name('pacientes')->middleware('auth');
-    Route::get('/events/createPaciente', [UsersEvents::class, 'showCreate'])->name('showCreate')->middleware('auth');
-    Route::post('/createPaciente', [UsersEvents::class, 'store'])->name('store')->middleware('auth');
-    Route::get('/events/deletePaciente/{id}', [UsersEvents::class, 'showDelete'])->name('showDelete')->middleware('auth');
-    Route::delete('/events/{id}', [UsersEvents::class, 'destroy'])->name('destroy')->middleware('auth');
-    Route::get('/events/editPaciente/{id}', [UsersEvents::class, 'showEdit'])->name('showEdit')->middleware('auth');
-    Route::put('/events/update/{id}', [UsersEvents::class, 'update'])->name('update')->middleware('auth');
+    Route::get('/pacientes', [PaicientesEvents::class, 'pacientes'])->name('pacientes')->middleware('auth');
+    Route::get('/events/createPaciente', [PaicientesEvents::class, 'showCreate'])->name('showCreate')->middleware('auth');
+    Route::post('/createPaciente', [PaicientesEvents::class, 'store'])->name('store')->middleware('auth');
+    Route::get('/events/deletePaciente/{id}', [PaicientesEvents::class, 'showDelete'])->name('showDelete')->middleware('auth');
+    Route::delete('/events/{id}', [PaicientesEvents::class, 'destroy'])->name('destroy')->middleware('auth');
+    Route::get('/events/editPaciente/{id}', [PaicientesEvents::class, 'showEdit'])->name('showEdit')->middleware('auth');
+    Route::put('/events/update/{id}', [PaicientesEvents::class, 'update'])->name('update')->middleware('auth');
 
 
 

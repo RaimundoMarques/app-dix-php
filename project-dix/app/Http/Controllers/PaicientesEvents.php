@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 
-class UsersEvents extends Controller
+class PaicientesEvents extends Controller
 {
     public function dashboard()
     {
