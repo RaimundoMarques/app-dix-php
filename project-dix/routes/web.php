@@ -29,7 +29,7 @@ Route::middleware([
     Route::get('/events/createProduto', [ProdutosEvent::class, 'showCreate'])->name('showCreate')->middleware('auth');
     Route::post('/createProduto', [ProdutosEvent::class, 'store'])->name('store')->middleware('auth');
     Route::get('/events/deleteProduto/{id}', [ProdutosEvent::class, 'showDelete'])->name('showDelete')->middleware('auth');
-    Route::delete('/events/delService/{id}', [ProdutosEvent::class, 'destroy'])->name('destroy')->middleware('auth');
+    Route::delete('/events/delProduto/{id}', [ProdutosEvent::class, 'destroy'])->name('destroy')->middleware('auth');
     Route::get('/events/editProduto/{id}', [ProdutosEvent::class, 'showEdit'])->name('showEdit')->middleware('auth');
     Route::put('/events/updateProduto/{id}', [ProdutosEvent::class, 'update'])->name('update')->middleware('auth');
 

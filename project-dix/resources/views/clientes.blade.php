@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-6">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    <a href="/events/createPaciente" class="btn btn-primary">{{ __('Cadastrar Paciente') }}</a>
+                    <a href="/events/createCliente" class="btn btn-primary">{{ __('Cadastrar Cliente') }}</a>
                 </h2>
             </div>
         </div>
@@ -57,7 +57,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($paciente as $item)
+                                @foreach ($cliente as $item)
                                     <tr>
                                         {{-- <th scope='row'>*</th> --}}
                                         <td>{{ $item->nome }}</td>
@@ -66,13 +66,13 @@
                                         <td>{{ $item->cidade }}</td>
                                         <td>{{ $item->tipo }}</td>
                                         <td>
-                                            <a type="link" href="/events/editPaciente/{{ $item->id }}">
+                                            <a type="link" href="/events/editCliente/{{ $item->id }}">
                                                 <button
                                                     class="btn btn-success btn-sm text-center d-grid gap-2">Editar</button>
                                             </a>
                                         </td>
                                         <td>
-                                            <a type="link" href="/events/deletePaciente/{{ $item->id }}">
+                                            <a type="link" href="/events/deleteCliente/{{ $item->id }}">
                                                 <button
                                                     class="btn btn-danger btn-sm text-center d-grid gap-2">Remover</button>
                                             </a>

@@ -74,6 +74,7 @@ class ClientesEvents extends Controller
     public function update(Request $request)
     {
         Cliente::findOrFail($request->id)->update($request->all());
+        
         return redirect('/clientes')->with('msg', 'Usuário editado com sucesso!');
     }
 

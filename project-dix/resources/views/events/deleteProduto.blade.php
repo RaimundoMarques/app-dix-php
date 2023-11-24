@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Excluir serviço') }}
+            {{ __('Deletar produto') }}
         </h2>
     </x-slot>
 
@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="container mt-2">
 
-                    <form action="/events/delService/{{ $servico->id }}" method="POST">
+                    <form action="/events/delProduto/{{ $produto->id }}" method="POST">
                         @csrf
                         @method('DELETE')
 
@@ -19,17 +19,21 @@
                                 <tr>
                                     {{-- <th scope="col">#</th> --}}
                                     <th scope="col">Nome</th>
-                                    <th scope="col">Tipo</th>
-                                    <th scope="col">Categoria</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Preço</th>
+                                    <th scope="col">Validade</th>
+                                    <th scope="col">Imagem</th>
                                     <th scope="col">Deletar</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     {{-- <th scope="row">{{ $paciente->id }}</th> --}}
-                                    <td>{{ $servico->nome }}</td>
-                                    <td>{{ $servico->tipo }}</td>
-                                    <td>{{ $servico->categoria }}</td>
+                                    <td>{{ $produto->name }}</td>
+                                    <td>{{ $produto->description }}</td>
+                                    <td>{{ $produto->price }}</td>
+                                    <td>{{ $produto->date_valid }}</td>
+                                    <td>{{ $produto->image }}</td>
                                     <td>
                                         <button type="submit"
                                             class="btn btn-danger btn-sm text-center d-grid gap-2">Deletar</button>

@@ -95,8 +95,8 @@ class ProdutosEvent extends Controller
     {
         $produto = Produto::findOrFail($id);
         //dd($paciente);
-        return view('events.deleteServico', [
-            'servico' => $produto
+        return view('events.deleteProduto', [
+            'produto' => $produto
         ]);
     }
 
