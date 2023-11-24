@@ -2,13 +2,13 @@ version: '3'
 services:
   postgres:
     image: postgres:14.4
-    container_name: db-dix-postgre
+    container_name: db-api-postgre
     environment:
       - POSTGRES_USER=userdix
       - POSTGRES_DB=dbdix
       - POSTGRES_PASSWORD=dix_app1234
     ports:
-      - 5441:5432
+      - 5434:5432
     volumes:
       - pg-data:/var/lib/postgresql/data
 volumes:
