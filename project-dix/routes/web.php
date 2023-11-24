@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PaicientesEvents;
-use App\Http\Controllers\ServicosEvent;
+use App\Http\Controllers\ProdutosEvent;
 
 use Illuminate\Support\Facades\Route;
 
@@ -24,19 +24,19 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
-    Route::get('/', [PaicientesEvents::class, 'dashboard'])->name('dashboard');
     // Rotas Serviços
-    Route::get('/servicos', [ServicosEvent::class, 'servicos'])->name('servicos')->middleware('auth');
-    Route::get('/events/createServico', [ServicosEvent::class, 'showCreate'])->name('showCreate')->middleware('auth');
-    Route::post('/createServico', [ServicosEvent::class, 'store'])->name('store')->middleware('auth');
-    Route::get('/events/deleteServico/{id}', [ServicosEvent::class, 'showDelete'])->name('showDelete')->middleware('auth');
-    Route::delete('/events/delService/{id}', [ServicosEvent::class, 'destroy'])->name('destroy')->middleware('auth');
-    Route::get('/events/editServico/{id}', [ServicosEvent::class, 'showEdit'])->name('showEdit')->middleware('auth');
-    Route::put('/events/updateServico/{id}', [ServicosEvent::class, 'update'])->name('update')->middleware('auth');
+    Route::get('/produtos', [ProdutosEvent::class, 'produtos'])->name('produtos')->middleware('auth');
+    Route::get('/events/createProduto', [ProdutosEvent::class, 'showCreate'])->name('showCreate')->middleware('auth');
+    Route::post('/createProduto', [ProdutosEvent::class, 'store'])->name('store')->middleware('auth');
+    Route::get('/events/deleteProduto/{id}', [ProdutosEvent::class, 'showDelete'])->name('showDelete')->middleware('auth');
+    Route::delete('/events/delService/{id}', [ProdutosEvent::class, 'destroy'])->name('destroy')->middleware('auth');
+    Route::get('/events/editProduto/{id}', [ProdutosEvent::class, 'showEdit'])->name('showEdit')->middleware('auth');
+    Route::put('/events/updateProduto/{id}', [ProdutosEvent::class, 'update'])->name('update')->middleware('auth');
 
 
 
     // Rotas Pacientes
+    Route::get('/', [PaicientesEvents::class, 'dashboard'])->name('dashboard');
     Route::get('/pacientes', [PaicientesEvents::class, 'pacientes'])->name('pacientes')->middleware('auth');
     Route::get('/events/createPaciente', [PaicientesEvents::class, 'showCreate'])->name('showCreate')->middleware('auth');
     Route::post('/createPaciente', [PaicientesEvents::class, 'store'])->name('store')->middleware('auth');
@@ -49,7 +49,7 @@ Route::middleware([
 
 
     // Rota relatório PDF
-    Route::get('pdf', [PdfController::class, 'geraPdf']);
+    // Route::get('pdf', [PdfController::class, 'geraPdf']);
 
     // Relatório PDF
     Route::get('/pdf', [PdfController::class, 'geraPdf']);

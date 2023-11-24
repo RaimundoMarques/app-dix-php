@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 
@@ -12,6 +13,11 @@ class PaicientesEvents extends Controller
         return view('dashboard');
     }
 
+
+
+
+
+    
     public function pacientes()
     {
         $search = request('search');
@@ -24,6 +30,11 @@ class PaicientesEvents extends Controller
         } else {
 
             $paciente = Paciente::all();
+
+            //$paciente = Http::acceptJson()->get('http://localhost:3333/api/pacientes')->object();
+            // echo gettype($paciente);
+            // dd($paciente);
+
         }
 
         return view('pacientes', [
@@ -33,9 +44,11 @@ class PaicientesEvents extends Controller
     }
 
 
+
+
+
     public function showDelete($id)
     {
-
         $paciente = Paciente::findOrFail($id);
         //dd($paciente);
 
@@ -46,12 +59,14 @@ class PaicientesEvents extends Controller
             'namePage' => $namePage
         ]);
     }
-
     public function destroy($id)
     {
         Paciente::findOrFail($id)->delete();
         return redirect('/pacientes')->with('msg', 'Usuário deletado com sucesso!');
     }
+
+
+
 
 
     public function showEdit($id)
@@ -61,14 +76,19 @@ class PaicientesEvents extends Controller
             'paciente' => $paciente
         ]);
     }
+    public function update(Request $request)
+    {
+        Paciente::findOrFail($request->id)->update($request->all());
+        return redirect('/pacientes')->with('msg', 'Usuário editado com sucesso!');
+    }
+
+
 
 
     public function showCreate()
     {
         return view('events.createPaciente');
     }
-
-
     public function store(Request $request)
     {
 
@@ -85,13 +105,5 @@ class PaicientesEvents extends Controller
 
         $paciente->save();
         return redirect('/pacientes')->with('msg', 'Paciente cadastrado com sucesso!');
-    }
-
-
-
-    public function update(Request $request)
-    {
-        Paciente::findOrFail($request->id)->update($request->all());
-        return redirect('/pacientes')->with('msg', 'Usuário editado com sucesso!');
     }
 }

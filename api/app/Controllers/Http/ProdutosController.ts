@@ -1,16 +1,16 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import Servico from 'App/Models/Servico';
+import Produto from 'App/Models/Produto';
 import Application from '@ioc:Adonis/Core/Application';
 
 
-export default class ServicosController {
+export default class ProdutosController {
 
     // método READ
     public async index() {
 
-        const servico = await Servico.all()
+        const produto = await Produto.all()
         return {
-            data: servico
+            data: produto
         }
     }
 

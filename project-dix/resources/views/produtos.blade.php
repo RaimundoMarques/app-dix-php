@@ -3,12 +3,12 @@
         <div class="row text-center">
             <div class="col-md-6">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    {{ __('Lista de Serviços') }}
+                    {{ __('Lista de Produtos') }}
                 </h2>
             </div>
             <div class="col-md-6">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    <a href="/events/createServico" class="btn btn-primary">{{ __('Cadastrar Serviço') }}</a>
+                    <a href="/events/createProduto" class="btn btn-primary">{{ __('Cadastrar Produto') }}</a>
                 </h2>
             </div>
         </div>
@@ -17,7 +17,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                @if (count($servico) == 0)
+                @if (count($produto) == 0)
                     <p class="fs-1 text-muted p-4 text-center">Não há registros para serem exibidos</p>
                 @else
                     <div class="row mt-2">
@@ -28,7 +28,7 @@
 
                     <div class="container p-5">
 
-                        <form action="/servicos" method="GET" class="form-inline my-2 my-lg-1">
+                        <form action="/produtos" method="GET" class="form-inline my-2 my-lg-1">
                             <input 
                             class="form-control rounded" 
                             type="text" 
@@ -46,27 +46,31 @@
                                 <tr>
                                     {{-- <th scope="col">#</th> --}}
                                     <th scope="col">Nome</th>
-                                    <th scope="col">Tipo</th>
-                                    <th scope="col">Categoria</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Preço</th>
+                                    <th scope="col">Data de Validade</th>
+                                    <th scope="col">Imagem</th>
                                     <th scope="col">Editar</th>
                                     <th scope="col">Remover</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($servico as $item)
+                                @foreach ($produto as $item)
                                     <tr>
                                         {{-- <th scope='row'>*</th> --}}
-                                        <td>{{ $item->nome }}</td>
-                                        <td>{{ $item->tipo }}</td>
-                                        <td>{{ $item->categoria }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->description }}</td>
+                                        <td>{{ $item->price }}</td>
+                                        <td>{{ $item->date_valid }}</td>
+                                        <td>{{ $item->image }}</td>
                                         <td>
-                                            <a type="link" href="/events/editServico/{{ $item->id }}">
+                                            <a type="link" href="/events/editProduto/{{ $item->id }}">
                                                 <button
                                                     class="btn btn-success btn-sm text-center d-grid gap-2">Editar</button>
                                             </a>
                                         </td>
                                         <td>
-                                            <a type="link" href="/events/deleteServico/{{ $item->id }}">
+                                            <a type="link" href="/events/deleteProduto/{{ $item->id }}">
                                                 <button
                                                     class="btn btn-danger btn-sm text-center d-grid gap-2">Remover</button>
                                             </a>
