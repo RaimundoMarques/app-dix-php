@@ -16,38 +16,83 @@
                 <div class="container mt-4">
 
                     <form action="/createProduto" method="POST">
-                        <div class="container w-50">
+                        <div class="container w-75">
                             @csrf
 
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="name"
-                                    placeholder="Nome de Produto" required>
-                                <label for="floatingInput" class="text-muted">Nome do produto</label>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" name="name"
+                                            placeholder="Nome de Produto" required>
+                                        <label for="floatingInput" class="text-muted">Nome do produto</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" name="price"
+                                            placeholder="price" required>
+                                        <label for="floatingInput" class="text-muted">Preço</label>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="description"
-                                    placeholder="description" required>
-                                <label for="floatingInput" class="text-muted">Descrição</label>
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" name="description"
+                                            placeholder="description" required>
+                                        <label for="floatingInput" class="text-muted">Descrição</label>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="price"
-                                    placeholder="price" required>
-                                <label for="floatingInput" class="text-muted">Preço</label>
+                            <div class="row">
+
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="date" class="form-control" id="floatingInput" name="date_valid"
+                                            placeholder="date_valid" required>
+                                        <label for="floatingInput" class="text-muted">Data de validade</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 m-auto">
+                                    <div class="form-floating mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="date_valid"
+                                                value="" id="flexCheckIndeterminate" disabled>
+                                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                                Data de validade não se aplica
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="floatingInput" name="date_valid"
-                                    placeholder="date_valid" required>
-                                <label for="floatingInput" class="text-muted">Data de validade</label>
+
+                            <div class="row">
+                                <div class="col-sm-6 m-auto">Imagem
+                                    <div class="form-floating mb-3">
+                                        <input type="file" class="form-control" id="image" name="image"
+                                            placeholder="image" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 m-auto">
+                                    <div class="form-floating mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="date_valid"
+                                                value="" id="flexCheckIndeterminate" disabled>
+                                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                                Produto não possui imagem
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="image"
-                                    placeholder="image" required>
-                                <label for="floatingInput" class="text-muted">Imagem</label>
-                            </div>
+
 
 
                             <div class="d-grid gap-2 mx-auto mt-4 mb-4">

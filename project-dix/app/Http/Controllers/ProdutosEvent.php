@@ -75,8 +75,19 @@ class ProdutosEvent extends Controller
         $produto->description   = $request->description;
         $produto->price         = $request->price;
         $produto->date_valid    = $request->date_valid;
-        $produto->image         = $request->image;
 
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+
+            $requestImage = $request->image;
+
+            $extesion = $requestImage->extension();
+
+            $imageName = md5($requestImage->image->getClientOriginalName() . strtotime("now")) . "." . $extesion;
+
+            $requestImage->image->move(public_path('img/img-products'), $imageName);
+
+            $produto->image = $imageName;
+        }
 
         $user = auth()->user();
         $produto->user_id = $user->id;

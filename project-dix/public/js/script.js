@@ -23,3 +23,7 @@ var inputCpf = function (val) {
     };
 
 $('#inputcpf').mask(inputCpf, options);
+
+
+
+
