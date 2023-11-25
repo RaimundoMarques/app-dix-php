@@ -26,7 +26,7 @@
                                 <strong>CPF</strong>
                             </label>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput"
+                                <input type="text" class="form-control" id="inputcpf"
                                     value="{{ $cliente->cpf }}" name="cpf" placeholder="CPF" required>
                             </div>
 
@@ -34,7 +34,7 @@
                                 <strong>Telefone</strong>
                             </label>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput"
+                                <input type="text" class="form-control" id="inputtelefone"
                                     value="{{ $cliente->telefone }}" name="telefone" placeholder="Telefone" required>
                             </div>
 
