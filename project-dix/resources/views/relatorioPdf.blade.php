@@ -31,7 +31,7 @@
 
 <body>
 
-    <div class="titulos">Lista de pacientes</div>
+    <div class="titulos">Lista de clientes</div>
 
     <table class="table table-striped">
 
@@ -59,23 +59,27 @@
 
     <hr>
 
-    <div class="titulos">Lista de serviços</div>
+    <div class="titulos">Lista de produtos</div>
 
     <table class="table table-striped">
 
         <thead>
             <tr>
                 <th scope="col">Nome</th>
-                <th scope="col">Tipo</th>
-                <th scope="col">Categoria</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Validade</th>
+                <th scope="col">Imagem</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($produto as $item)
                 <tr>
-                    <td>{{ $item->nome }}</td>
-                    <td>{{ $item->tipo }}</td>
-                    <td>{{ $item->categoria }}</td>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->description }}</td>
+                    <td>{{ $item->price }}</td>
+                    <td>{{ $item->date_valid }}</td>
+                    <td>{{ $item->image }}</td>
                 </tr>
             @endforeach
         </tbody>

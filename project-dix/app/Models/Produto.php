@@ -19,6 +19,7 @@ class Produto extends Model
         'price',
         'data_valid',
         'image',
+        'id_user',
     ];
 
     protected $guarded = [];

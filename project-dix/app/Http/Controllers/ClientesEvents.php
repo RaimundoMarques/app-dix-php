@@ -10,7 +10,7 @@ class ClientesEvents extends Controller
 {
     public function dashboard()
     {
-        return view('dashboard');
+        return view('/dashboard');
     }
 
 

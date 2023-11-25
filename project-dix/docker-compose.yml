@@ -7,7 +7,7 @@ services:
     container_name: db-front
     environment:
       - POSTGRES_USER=userdix
-      - POSTGRES_DB=dbdix
+      - POSTGRES_DB=dbdixfront
       - POSTGRES_PASSWORD=dix_app1234
     ports:
       - 5441:5432
