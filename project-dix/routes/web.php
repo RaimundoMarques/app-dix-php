@@ -24,7 +24,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
-    // Rotas Serviços
+    // Rotas Produtos
     Route::get('/produtos', [ProdutosEvent::class, 'produtos'])->name('produtos')->middleware('auth');
     Route::get('/events/createProduto', [ProdutosEvent::class, 'showCreate'])->name('showCreate')->middleware('auth');
     Route::post('/createProduto', [ProdutosEvent::class, 'store'])->name('store')->middleware('auth');
